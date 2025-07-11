@@ -1,5 +1,26 @@
-# Vue 3 + Vite
+# Beepered's Portfolio
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+That's right! It's my portfolio. For porting with a little folio.
+Clicky clicky. AAAAAAHHHHH!!!
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Who am I?
+
+I don't know?
+
+## Where am I?
+
+I ... I, I don't know.
+
+## What am I?
+
+Stop! uhhhuhhhuhhhuhh. Stop asking me this stuff.
+
+## Why am I?
+
+Chunky Cheese.
+
+### Remember the left side of the oven stays on the left
+
+Why are you reading this? Just go look at my portfolio. Even though it is super unfinished.
+I don't know what to put here. Stop README-ing.
+A Vite and Vue 3 project
