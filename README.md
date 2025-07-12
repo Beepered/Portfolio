@@ -1,6 +1,7 @@
 # Beepered's Portfolio
 
 That's right! It's my portfolio. For porting with a little folio.
+A Vite + Vue 3 project
 Clicky clicky. AAAAAAHHHHH!!!
 
 ## Who am I?
@@ -23,4 +24,3 @@ Chunky Cheese.
 
 Why are you reading this? Just go look at my portfolio. Even though it is super unfinished.
 I don't know what to put here. Stop README-ing.
-A Vite and Vue 3 project

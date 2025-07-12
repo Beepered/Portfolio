@@ -22,17 +22,18 @@ export default {
   },
   methods: {
     AddProgress() {
-      const intervalTime = 45; // Milliseconds for each progress increment
-      const incrementAmount = 1; // Percentage to add in each step
+      const intervalTime = 30; // Milliseconds for each progress increment
 
       const fakeLoad = setInterval(() => {
-        let max = 2
+        let max = 2.5
         let min = 0.6
         let randomNum = Math.floor(Math.random() * (max - min + 1) + min)
-        this.progress += incrementAmount * randomNum;
+        this.progress += randomNum;
         if (this.progress >= 100) {
           this.progress = 100;
-          this.$emit("progress_complete")
+          setInterval(() => {
+            this.$emit("progress_complete")
+          }, 300)
         }
       }, intervalTime);
     },
