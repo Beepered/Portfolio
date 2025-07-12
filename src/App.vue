@@ -1,33 +1,37 @@
 <template>
-  <transition name="fade" @transitionend="page_loaded = true">
-    <section v-if="page_loading">
+  <button @click="page_loaded = !page_loaded">Toggle</button>
+
+  <transition name="fade">
+    <section v-if="!page_loaded">
       <ProgressBar @progress_complete="page_loaded = true" />
       <p>loading...</p>
     </section>
   </transition>
-  <p>seseses</p>
-  <section v-if="page_loaded">
-    <h1>Brendan's Portfolio</h1>
-    <p>Hey-o! This is Brendan Trieu's portfolio, a place where I delve further into my projects the process and a
-      bunch
-      of other random stuff.</p>
-    <p>As a game designer, I like to play games, make games, and talk about games. I am also very passionate about
-      drawing and animating which you can see in my games.</p>
-    <p>Click around and read! If not, sit around and lets talk. Umm... come here often?</p>
+  <transition name="fade" mode="out-in">
+    <section v-if="page_loaded">
+      <h1>Brendan's Portfolio</h1>
+      <p>Hey-o! This is Brendan Trieu's portfolio, a place where I delve further into my projects the process and a
+        bunch
+        of other random stuff.</p>
+      <p>As a game designer, I like to play games, make games, and talk about games. I am also very passionate about
+        drawing and animating which you can see in my games.</p>
+      <p>Click around and read! If not, sit around and lets talk. Umm... come here often?</p>
 
-    <QuoteGenerator></QuoteGenerator>
+      <QuoteGenerator></QuoteGenerator>
 
-    <p><b>Links</b></p>
-    <ol>
+      <ol>
+        <li><a href="https://www.linkedin.com/in/brendan-trieu-882753266/" class="social_link">Linkedin<img
+              src="@assets/icons/linkedin.png" class="icon"></a></li>
+        <li><a href="https://luminice-star.itch.io/" class="social_link">itch.io<img src="@assets/icons/itchio.png"
+              class="icon"></a></li>
+        <li><a href="https://github.com/Beepered" class="social_link">Github<img src="@assets/icons/github.png"
+              class="icon"></a></li>
+        <li><a href="mailto:bktrieu@gmail.com" class="social_link">Email<img src="@assets/icons/email.jpg"
+              class="icon"></a></li>
+      </ol>
 
-      <li><a href="https://www.linkedin.com/in/brendan-trieu-882753266/">Linkedin</a><img
-          src="@assets/icons/linkedin.png" class="icon"></li>
-      <li><a href="https://luminice-star.itch.io/">itch.io</a><img src="@assets/icons/itchio.png" class="icon"></li>
-      <li><a href="https://github.com/Beepered">Github</a><img src="@assets/icons/github.png" class="icon"></li>
-      <li><a href="mailto:bktrieu@gmail.com">Email</a><img src="@assets/icons/email.jpg" class="icon"></li>
-    </ol>
-
-  </section>
+    </section>
+  </transition>
 </template>
 
 <script>
@@ -42,7 +46,6 @@ export default {
   },
   data() {
     return {
-      page_loading: true,
       page_loaded: false,
     }
   },
@@ -65,29 +68,35 @@ export default {
   margin-top: 60px;
 }
 
-.icon {
-  padding-left: 1%;
-  width: 4%;
+.social_link {
+  width: 10%;
+  height: 4%;
+  padding: 1%;
+  border: 2px solid black;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
 }
 
+.icon {
+  padding-left: 10%;
+  width: 25%;
+}
+
+/* TRANSITIONS  */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1.2s;
+  transition: opacity 1.3s ease;
 }
 
-.fade-enter,
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
 
-.shrink-enter-active,
-.shrink-leave-active {
-  transition: all 0.5s ease-out;
-  max-height: 400px;
-}
-
-.shrink-enter,
-.shrink-leave-to {
-  max-height: 0;
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
