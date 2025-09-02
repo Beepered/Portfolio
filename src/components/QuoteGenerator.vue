@@ -15,12 +15,10 @@ export default {
     },
     async mounted() {
         try {
-            /*
-            const FILE_PATH = "/quotes.txt"
+            const FILE_PATH = "public/quotes.txt"
             const response = await fetch(FILE_PATH);
             const text = await response.text();
             this.processFileContent(text);
-            */
         } catch (error) {
             console.error('Error fetching file:', error);
         }

@@ -1,3 +1,5 @@
+<!-- Run npm run deploy to update/deploy github pages version -->
+
 <script setup>
 import ProgressBar from '@components/ProgressBar.vue'
 </script>
@@ -41,19 +43,40 @@ export default {
 }</script>
 
 <style>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #273d53;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.icon {
+  /* For linkedin, github icons */
+  padding-left: 10%;
+  width: 25%;
 }
 
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+/* nav */
+#nav {
+  padding: 5%;
+}
+
+#nav a {
+  font-weight: bold;
+  font-size: larger;
+  color: rgb(20, 42, 181);
+}
+
+#nav a:hover {
+  filter: drop-shadow(0 0 2em #ff0101aa);
+}
+
+/* nav selected */
+#nav a.router-link-exact-active {
+  font-size: xx-large;
+  color: rgb(56, 189, 255);
+  text-shadow: 2px 2px #bebebe;
 }
 
 /*--------- TRANSITIONS  ---------*/
