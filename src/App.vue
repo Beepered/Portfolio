@@ -1,13 +1,46 @@
 <script setup>
-import QuoteGenerator from './components/QuoteGenerator.vue';
+import ProgressBar from '@components/ProgressBar.vue'
 </script>
 
 <template>
-  <h1>Brendan's Portfolio</h1>
-  <QuoteGenerator></QuoteGenerator>
+  <transition name="fade" mode="in-out" @after-leave="page_loaded = true">
+    <section v-if="!progress_complete">
+      <ProgressBar @progress_complete="progress_complete = true" />
+    </section>
+  </transition>
+
+  <!-- router -->
+  <transition name="fade">
+    <section v-if="page_loaded">
+      <div id="nav">
+        <router-link to="/">Home</router-link> |
+
+      </div>
+      <router-view v-slot="{ Component }">
+        <transition name="fade">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </section>
+  </transition>
 </template>
 
-<style scoped>
+<script>
+export default {
+  name: 'App',
+  components: { ProgressBar },
+  data() {
+    return {
+      progress_complete: false,
+      page_loaded: false,
+    }
+  },
+  methods: {
+
+  }
+}</script>
+
+<style>
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -21,5 +54,16 @@ import QuoteGenerator from './components/QuoteGenerator.vue';
 
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+
+/*--------- TRANSITIONS  ---------*/
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

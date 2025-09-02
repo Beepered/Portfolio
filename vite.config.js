@@ -1,15 +1,18 @@
 import { defineConfig } from 'vite'
-import { fileURLToPath, URL } from 'node:url'
+import path from 'node:path'
 import vue from '@vitejs/plugin-vue'
 
 // https://vite.dev/config/
 export default defineConfig({
   base: '/Portfolio/',
   plugins: [vue()],
-  alias: { 
-    // paths
-    '@': fileURLToPath(new URL('./src', import.meta.url)), // Alias for src folder
-    '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
-    '@pages': fileURLToPath(new URL('./src/pages', import.meta.url))
+  resolve: {
+    alias: { 
+      // paths
+      '@': path.resolve(__dirname, './src'), // Alias for src folder
+      '@assets': path.resolve(__dirname, './assets'),
+      '@components': path.resolve(__dirname, './src/components'),
+      '@pages': path.resolve(__dirname, './src/pages')
+    }
   }
 })
