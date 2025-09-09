@@ -72,7 +72,6 @@ export default {
     padding: 10px;
 }
 
-
 .social_link {
     width: 10%;
     height: 4%;

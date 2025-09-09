@@ -5,7 +5,7 @@ import ProgressBar from '@components/ProgressBar.vue'
 </script>
 
 <template>
-  <transition name="fade" mode="in-out" @after-leave="page_loaded = true">
+  <transition name="GrowFade" @after-leave="page_loaded = true">
     <section v-if="!progress_complete">
       <ProgressBar @progress_complete="progress_complete = true" />
     </section>
@@ -19,7 +19,7 @@ import ProgressBar from '@components/ProgressBar.vue'
         <router-link to="/About">About Me</router-link> |
       </div>
       <router-view v-slot="{ Component }">
-        <transition name="fade">
+        <transition name="fade" mode="out-in">
           <component :is="Component" />
         </transition>
       </router-view>
@@ -40,7 +40,8 @@ export default {
   methods: {
 
   }
-}</script>
+}
+</script>
 
 <style>
 #app {
@@ -81,11 +82,28 @@ export default {
 /*--------- TRANSITIONS  ---------*/
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1.2s ease;
+  transition: opacity 1.1s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+
+.GrowFade-leave-active {
+  animation: GrowFade-in 1.5s;
+}
+
+@keyframes GrowFade-in {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }
 </style>
