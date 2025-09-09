@@ -16,7 +16,7 @@ import ProgressBar from '@components/ProgressBar.vue'
     <section v-if="page_loaded">
       <div id="nav">
         <router-link to="/">Home</router-link> |
-
+        <router-link to="/About">About Me</router-link> |
       </div>
       <router-view v-slot="{ Component }">
         <transition name="fade">
@@ -54,7 +54,11 @@ export default {
 /* nav */
 #nav {
   background-color: #ececec;
-  padding: 2%;
+  padding: 1%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
 }
 
 #nav a {
@@ -64,14 +68,14 @@ export default {
 }
 
 #nav a:hover {
-  filter: drop-shadow(0 0 2em #ff0101aa);
+  filter: drop-shadow(0 0 1.5em #3f3f3faa);
 }
 
 /* nav selected */
 #nav a.router-link-exact-active {
-  font-size: xx-large;
+  font-size: x-large;
   color: rgb(56, 189, 255);
-  text-shadow: 2px 2px #bebebe;
+  text-shadow: 2px 2px #ababab;
 }
 
 /*--------- TRANSITIONS  ---------*/
