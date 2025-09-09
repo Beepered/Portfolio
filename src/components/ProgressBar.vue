@@ -48,7 +48,7 @@ export default {
 <style>
 #progress_bar {
     width: 60vw;
-    height: 20%;
+    height: 22%;
     background-color: #b4b4b4;
     position: relative;
     border: 4px solid rgb(140, 140, 140);

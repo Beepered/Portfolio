@@ -51,15 +51,10 @@ export default {
   color: #273d53;
 }
 
-.icon {
-  /* For linkedin, github icons */
-  padding-left: 10%;
-  width: 25%;
-}
-
 /* nav */
 #nav {
-  padding: 5%;
+  background-color: #ececec;
+  padding: 2%;
 }
 
 #nav a {

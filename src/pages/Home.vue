@@ -9,19 +9,27 @@
             about
             drawing and animating which you can see in my games.</p>
         <p>Click around and read! If not, sit around and lets talk. Umm... come here often?</p>
+        <p>Visit my <a href="https://sites.google.com/view/brendan-trieu-portfolio/home" target="_blank">old portfolio
+                website</a></p>
 
         <QuoteGenerator></QuoteGenerator>
 
-        <ol>
-            <li><a href="https://www.linkedin.com/in/brendan-trieu-882753266/" class="social_link">Linkedin<img
-                        src="@assets/icons/linkedin.png" class="icon"></a></li>
-            <li><a href="https://luminice-star.itch.io/" class="social_link">itch.io<img src="@assets/icons/itchio.png"
-                        class="icon"></a></li>
-            <li><a href="https://github.com/Beepered" class="social_link">Github<img src="@assets/icons/github.png"
-                        class="icon"></a></li>
-            <li><a href="mailto:bktrieu@gmail.com" class="social_link">Email<img src="@assets/icons/email.jpg"
-                        class="icon"></a></li>
-        </ol>
+        <div class="footer">
+            <div class="footer-row">
+                <a href="https://www.linkedin.com/in/brendan-trieu-882753266/" target="_blank"
+                    class="social_link">Linkedin<img src="@assets/icons/linkedin.png" class="icon"></a>
+                <a href="https://luminice-star.itch.io/" target="_blank" class="social_link">itch.io<img
+                        src="@assets/icons/itch.png" class="icon"></a>
+            </div>
+            <div class="footer-row">
+                <a href="https://github.com/Beepered" target="_blank" class="social_link">Github<img
+                        src="@assets/icons/github.png" class="icon"></a>
+                <a href="mailto:bktrieu@gmail.com" target="_blank" class="social_link">Email<img
+                        src="@assets/icons/email.png" class="icon"></a>
+            </div>
+        </div>
+
+
     </section>
 </template>
 
@@ -48,23 +56,30 @@ export default {
 </script>
 
 <style>
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #273d53;
-    margin-top: 60px;
+.footer {
+    background-color: #ececec;
+    border-radius: 6px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 5%;
 }
+
+.footer .footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
 
 .social_link {
     width: 10%;
     height: 4%;
     padding: 1%;
-    border: 2px solid black;
-    border-radius: 4px;
     display: flex;
     justify-content: center;
+    font-size: large;
 }
 
 .icon {
