@@ -15,7 +15,7 @@ export default {
     },
     async mounted() {
         try {
-            const FILE_PATH = "assets/quotes.txt"
+            const FILE_PATH = "./src/assets/quotes.txt"
             /*
             fetch(FILE_PATH)
                 .then((res) => res.text())
