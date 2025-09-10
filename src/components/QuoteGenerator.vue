@@ -16,17 +16,25 @@ export default {
     async mounted() {
         try {
             const FILE_PATH = "./src/assets/quotes.txt"
+
+
+            fetch(FILE_PATH)
+                .then((response) => response.text())
+                .then((text) => {
+                    this.GetRandomLine(text)
+                });
             /*
             fetch(FILE_PATH)
                 .then((res) => res.text())
                 .then((text) => {
-                    console.log("this is thext " + text)
+                    console.log("this is it: " + text)
                 })
                 .catch((e) => console.error(e));
-            */
+
             const response = await fetch(FILE_PATH)
             const text = await response.text();
             this.GetRandomLine(text);
+            */
 
         } catch (error) {
             console.error('Error fetching file:', error);

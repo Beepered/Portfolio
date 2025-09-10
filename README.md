@@ -2,7 +2,7 @@
 
 That's right! It's my portfolio. For porting with a little folio.
 A Vite + Vue 3 project.  
-Clicky clicky. AAAAAAHHHHH!!!
+Clicky clicky. AAAAAAHHHHH!!!  
 https://beepered.github.io/Portfolio/
 
 ## Who am I?
