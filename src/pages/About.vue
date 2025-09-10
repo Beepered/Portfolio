@@ -10,7 +10,7 @@
         <p>I don't care enough for an "About Me" page. This is <i>MY</i> portfolio wahhahaha</p>
 
         <p>I can predict your future. Please enter your name and birthday.</p>
-        <input type="text" v-model="name">
+        <input type="text" maxLength=25 size=27 v-model="name">
         <input type="date" id="birthday" v-model="date">
         <button @click="CheckForm">Submit</button>
 

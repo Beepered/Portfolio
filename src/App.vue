@@ -82,7 +82,7 @@ export default {
 /*--------- TRANSITIONS  ---------*/
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1.1s ease;
+  transition: opacity 1s ease;
 }
 
 .fade-enter-from,
@@ -90,9 +90,8 @@ export default {
   opacity: 0;
 }
 
-
 .GrowFade-leave-active {
-  animation: GrowFade-in 1.5s;
+  animation: GrowFade-in 1.4s;
 }
 
 @keyframes GrowFade-in {
