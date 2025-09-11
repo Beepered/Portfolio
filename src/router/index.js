@@ -2,6 +2,8 @@ import { createRouter, createMemoryHistory } from 'vue-router'
 
 import Home from '@pages/Home.vue'
 import About from '@pages/About.vue'
+import CtC from '@pages/CtC.vue'
+import Secret from '@pages/Secret.vue'
 
 const routes = [
   {
@@ -13,6 +15,16 @@ const routes = [
     path: '/About',
     name: 'About',
     component: About
+  },
+  {
+    path: '/CtC',
+    name: 'CtC',
+    component: CtC
+  },
+  {
+    path: '/Secret',
+    name: 'Secret',
+    component: Secret
   },
 ]
 

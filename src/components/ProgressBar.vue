@@ -27,7 +27,7 @@ export default {
 
             const fakeLoad = setInterval(() => {
                 let max = 2.5
-                let min = 0.6
+                let min = 0.75
                 let randomNum = Math.floor(Math.random() * (max - min + 1) + min)
                 this.progress += randomNum;
                 if (this.progress >= 100) {
@@ -77,6 +77,6 @@ export default {
 
 #loading_text {
     color: rgb(70, 70, 70);
-    font-size: 100%;
+    font-size: 1.2em;
 }
 </style>

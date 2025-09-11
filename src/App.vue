@@ -17,11 +17,12 @@ import ProgressBar from '@components/ProgressBar.vue'
       <div id="nav">
         <router-link to="/">Home</router-link> |
         <router-link to="/About">About Me</router-link> |
+        <router-link to="/CtC">Cash the Cache</router-link> |
       </div>
       <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in">
+        <Transition name="fade" mode="out-in">
           <component :is="Component" />
-        </transition>
+        </Transition>
       </router-view>
     </section>
   </transition>
@@ -55,7 +56,8 @@ export default {
 /* nav */
 #nav {
   background-color: #ececec;
-  padding: 1%;
+  padding: 2%;
+  padding-bottom: 1%;
   width: 100%;
   left: 0;
   top: 0;
@@ -64,7 +66,7 @@ export default {
 
 #nav a {
   font-weight: bold;
-  font-size: larger;
+  font-size: 1.5em;
   color: rgb(20, 42, 181);
 }
 
@@ -74,7 +76,7 @@ export default {
 
 /* nav selected */
 #nav a.router-link-exact-active {
-  font-size: x-large;
+  font-size: 2em;
   color: rgb(56, 189, 255);
   text-shadow: 2px 2px #ababab;
 }
@@ -82,7 +84,7 @@ export default {
 /*--------- TRANSITIONS  ---------*/
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1s ease;
+  transition: opacity 0.75s ease;
 }
 
 .fade-enter-from,
@@ -91,7 +93,7 @@ export default {
 }
 
 .GrowFade-leave-active {
-  animation: GrowFade-in 1.4s;
+  animation: GrowFade-in 1.3s;
 }
 
 @keyframes GrowFade-in {
@@ -101,7 +103,7 @@ export default {
   }
 
   100% {
-    transform: scale(1.5);
+    transform: scale(1.75);
     opacity: 0;
   }
 }

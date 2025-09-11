@@ -9,8 +9,6 @@
 import textContent from '@assets/quotes.txt?raw';
 
 export default {
-
-
     name: 'QuoteGenerator',
     data() {
         return {
@@ -20,17 +18,6 @@ export default {
     async mounted() {
         try {
             this.GetRandomLine(textContent);
-            /*
-            console.log(textContent)
-
-            const FILE_PATH = "./src/assets/quotes.txt"
-
-            fetch(FILE_PATH)
-                .then((response) => response.text())
-                .then((text) => {
-                    this.GetRandomLine(text)
-                });
-            */
         } catch (error) {
             console.error('Error fetching file:', error);
         }

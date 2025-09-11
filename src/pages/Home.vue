@@ -85,21 +85,4 @@ export default {
     padding-left: 10%;
     width: 25%;
 }
-
-/* TRANSITIONS  */
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 1.3s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    opacity: 0;
-}
-
-.fade-enter-to,
-.fade-leave-from {
-    opacity: 1;
-    transform: translateY(0);
-}
 </style>
