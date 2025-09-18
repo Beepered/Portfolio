@@ -1,11 +1,11 @@
 <template>
-    <section>
+    <section class="white">
         <h1 class="title">Secret Room</h1>
         <p>Congrats! You found the secret room.</p>
         <p>Either you <b>cheated</b> or are really cool.</p>
         <p>Here. Have a coookie</p>
         <div @click="Click">
-            <img src="@assets/img/cookie.png" alt="O" style="width:40%">
+            <img src="@assets/img/cookie.png" alt="O" style="width:50%">
         </div>
         <p class="count" v-if="cookie_given">{{ count }}</p>
 
@@ -36,7 +36,16 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+section {
+    background-color: rgb(23, 23, 23);
+}
+
+.white {
+    color: rgb(201, 201, 201);
+    font-size: 120%;
+}
+
 .title {
     color: rgb(73, 200, 141)
 }

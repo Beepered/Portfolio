@@ -20,6 +20,10 @@
             <p class="result" v-show="result" :key="count">Dead</p>
         </transition>
 
+        <transition name="slowFade">
+            <router-link to="/Secret" class="secret" v-show="secret">Secret Found</router-link>
+        </transition>
+
     </section>
 </template>
 
@@ -29,9 +33,10 @@ export default {
         return {
             name: null,
             date: null,
-            count: 0,
+            count: 0, // pathetic way to get text to keep using transition
             result: false,
             error: false,
+            secret: false,
         }
     },
     methods: {
@@ -40,6 +45,9 @@ export default {
                 this.result = true;
                 this.error = false;
                 this.count++;
+                if (this.name.toLowerCase() == "cheater") {
+                    this.secret = true;
+                }
             }
             else {
                 this.error = true;
@@ -50,17 +58,6 @@ export default {
 </script>
 
 <style scoped>
-/*--------- TRANSITIONS  ---------*/
-.fadeText-enter-active,
-.fadeText-leave-active {
-    transition: opacity 2.5s ease;
-}
-
-.fadeText-enter-from,
-.fadeText-leave-to {
-    opacity: 0;
-}
-
 input {
     margin-right: 1%;
     padding: 1%;
@@ -75,5 +72,31 @@ input {
 .result {
     color: rgb(65, 18, 110);
     font-size: 1.5em;
+}
+
+.secret {
+    color: rgb(73, 200, 141);
+    font-size: 1.5em;
+}
+
+/*--------- TRANSITIONS  ---------*/
+.fadeText-enter-active,
+.fadeText-leave-active {
+    transition: opacity 2.25s ease;
+}
+
+.fadeText-enter-from,
+.fadeText-leave-to {
+    opacity: 0;
+}
+
+.slowFade-enter-active,
+.slowFade-leave-active {
+    transition: opacity 5s ease;
+}
+
+.slowFade-enter-from,
+.slowFade-leave-to {
+    opacity: 0;
 }
 </style>

@@ -15,18 +15,15 @@
         <QuoteGenerator></QuoteGenerator>
 
         <div class="footer">
-            <div class="footer-row">
-                <a href="https://www.linkedin.com/in/brendan-trieu-882753266/" target="_blank"
-                    class="social_link">Linkedin<img src="@assets/icons/linkedin.png" class="icon"></a>
-                <a href="https://luminice-star.itch.io/" target="_blank" class="social_link">itch.io<img
-                        src="@assets/icons/itch.png" class="icon"></a>
-            </div>
-            <div class="footer-row">
-                <a href="https://github.com/Beepered" target="_blank" class="social_link">Github<img
-                        src="@assets/icons/github.png" class="icon"></a>
-                <a href="mailto:bktrieu@gmail.com" target="_blank" class="social_link">Email<img
-                        src="@assets/icons/email.png" class="icon"></a>
-            </div>
+            <a href="https://www.linkedin.com/in/brendan-trieu-882753266/" target="_blank"
+                class="social_link">Linkedin<img src="@assets/icons/linkedin.png" class="icon"></a>
+            <a href="https://luminice-star.itch.io/" target="_blank" class="social_link">itch.io<img
+                    src="@assets/icons/itch.png" class="icon"></a>
+
+            <a href="https://github.com/Beepered" target="_blank" class="social_link">Github<img
+                    src="@assets/icons/github.png" class="icon"></a>
+            <a href="mailto:bktrieu@gmail.com" target="_blank" class="social_link">Email<img
+                    src="@assets/icons/email.png" class="icon"></a>
         </div>
 
 
@@ -57,19 +54,17 @@ export default {
 
 <style>
 .footer {
-    background-color: #ececec;
-    border-radius: 6px;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    margin-top: 5%;
-}
-
-.footer .footer-row {
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 10px;
+    width: 70%;
+    margin-top: 5%;
+    bottom: 0;
+    left: 0;
+    border-radius: 6px;
+    background-color: #ececec;
 }
 
 .social_link {
