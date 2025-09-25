@@ -17,11 +17,11 @@
 <style>
 /* nav */
 #nav {
-  background-color: #ececec;
+  background-color: #e7e7e7;
   padding-top: 0.4em;
   padding-bottom: 0.4em;
   z-index: 1;
-  width: 100%;
+  width: 100vw;
   left: 0;
   top: 0;
 }

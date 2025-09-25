@@ -7,9 +7,7 @@
         </span>
 
         <p>This is the bottom bar</p>
-        <p>Beep</p>
-
-
+        <p>It will hold more stuff later</p>
     </div>
 </template>
 
@@ -17,7 +15,6 @@
 import { collapsed, ToggleBar, barHeight } from "./state.js"
 
 export default {
-    props: {},
     setup() {
         return { collapsed, ToggleBar, barHeight }
     }

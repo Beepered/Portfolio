@@ -1,18 +1,38 @@
 <template>
     <section>
-        <h1>Brendan's Portfolio</h1>
-        <p>Hey-o! This is Brendan Trieu's portfolio, a place where I delve further into my projects the process and
-            a
-            bunch
-            of other random stuff.</p>
-        <p>As a game designer, I like to play games, make games, and talk about games. I am also very passionate
-            about
-            drawing and animating which you can see in my games.</p>
-        <p>Click around and read! If not, sit around and lets talk. Umm... come here often?</p>
-        <p>Visit my <a href="https://sites.google.com/view/brendan-trieu-portfolio/home" target="_blank">old portfolio
-                website</a></p>
+        <div class="padd" style="padding-top: 1em">
+            <h1>Brendan Trieu</h1>
+            <p>Hey-o! This is Brendan Trieu's portfolio, a place where I delve further into my projects the process and
+                a bunch of other random stuff.</p>
+        </div>
 
-        <QuoteGenerator></QuoteGenerator>
+        <div class="about-me padd">
+            <div class="col">
+                <img src="@assets/img/me.jpg" style="height:20em; border-radius: 25%;">
+            </div>
+            <div class="col">
+                <h2 style="font-size: 2em;">About Me</h2>
+                <p>My name is Brendan Trieu. I graduated UC: Santa Cruz with a Bachelor of Science in Computer Science:
+                    Computer Game Design.
+                    I am passionate about programming and creating thing with my skills, whether it is video games or
+                    drawings.
+                    Though I have a degree in game design, programming interests me as a whole,
+                    and I would like to learn more and experience software development as a whole.
+                </p>
+            </div>
+        </div>
+
+        <div class="padd">
+            <p>As a game designer, I like to play games, make games, and talk about games. I am also very passionate
+                about
+                drawing and animating which you can see in my games.</p>
+            <p>Click around and read! If not, sit around and lets talk. Umm... come here often?</p>
+            <p>Visit my <a href="https://sites.google.com/view/brendan-trieu-portfolio/home" target="_blank">old
+                    portfolio
+                    website</a></p>
+
+            <QuoteGenerator></QuoteGenerator>
+        </div>
 
         <div class="footer">
             <a href="https://www.linkedin.com/in/brendan-trieu-882753266/" target="_blank"
@@ -58,18 +78,35 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px;
-    width: 70%;
+    padding: 15px;
+    width: 60%;
     margin-top: 5%;
     bottom: 0;
     left: 0;
     border-radius: 6px;
-    background-color: #ececec;
+    background-color: #f4f4f4;
+}
+
+.about-me {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f4f4f4;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.padd {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.col {
+    flex: 0 0 auto;
+    width: 40%;
 }
 
 .social_link {
-    width: 10%;
-    height: 4%;
+    width: 12%;
     padding: 1%;
     display: flex;
     justify-content: center;
@@ -77,7 +114,7 @@ export default {
 }
 
 .icon {
-    padding-left: 10%;
-    width: 25%;
+    padding-left: 1em;
+    height: 2em;
 }
 </style>

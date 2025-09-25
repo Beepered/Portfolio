@@ -46,7 +46,7 @@
 <style scoped>
 .left {
     float: left;
-    width: 60%;
+    width: 50%;
     margin: 1%;
     padding: 1%;
     background-color: rgb(227, 227, 227);
@@ -55,7 +55,7 @@
 
 .right {
     float: right;
-    width: 60%;
+    width: 50%;
     margin: 1%;
     padding: 1%;
     background-color: rgb(227, 227, 227);

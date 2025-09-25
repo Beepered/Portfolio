@@ -4,6 +4,7 @@ import Home from '@pages/Home.vue'
 import About from '@pages/About.vue'
 import CtC from '@pages/CtC.vue'
 import Fight from '@pages/Fight.vue'
+import Funny from '@pages/Funny.vue'
 import Secret from '@pages/Secret.vue'
 
 const routes = [
@@ -26,6 +27,11 @@ const routes = [
     path: '/Fight',
     name: 'Fight',
     component: Fight
+  },
+  {
+    path: '/Funny',
+    name: 'Funny',
+    component: Funny
   },
   {
     path: '/Secret',

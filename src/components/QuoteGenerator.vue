@@ -9,7 +9,6 @@
 import textContent from '@assets/quotes.txt?raw';
 
 export default {
-    name: 'QuoteGenerator',
     data() {
         return {
             quote: "",

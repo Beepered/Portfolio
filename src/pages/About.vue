@@ -1,102 +1,107 @@
 <template>
     <section>
-        <img src="@assets/img/gangnam.gif" alt="Who cares about alt text" style="width:13%">
-        <img src="@assets/img/thanos.gif" alt="It's a gif of Thanos twerking" style="width:13%">
-        <img src="@assets/img/cat-water.gif" alt="Blah blah blah. Runs away on all four" style="width:15%">
-        <a href="https://www.youtube.com/watch?v=gRpLPv41WxA&ab_channel=SuperGuy" target="_blank"><img
-                src="@assets/img/geras.gif" alt="Geras MK1 combo" style="width:30%; cursor: default;"></a>
-        <!-- You see this? -->
-        <img src="@assets/img/rat-lunge.gif" alt="Have at thee" style="width:18%">
-        <p>I don't care enough for an "About Me" page. This is <i>MY</i> portfolio wahhahaha</p>
+        <router-link to="/Funny">
+            <div id="odd_pixel"></div>
+        </router-link>
 
-        <p>I can predict your future. Please enter your name and birthday.</p>
-        <input type="text" maxLength=25 size=27 v-model="name">
-        <input type="date" id="birthday" v-model="date">
-        <button @click="CheckForm">Submit</button>
-        <p class="error" v-show="error">Nuh uh. You need to fill it all out</p>
+        <div class="padd" style="padding-top: 1em">
+            <h1>About Me</h1>
+            <p>Blood type: H</p>
+            <p>Height: 72cm (5.9 ft)</p>
+            <p>Favorite Food: Chitin, Caramel, Noodles</p>
+        </div>
 
-        <p><b>Your result: </b></p>
-        <transition name="fadeText">
-            <p class="result" v-show="result" :key="count">Dead</p>
-        </transition>
-
-        <transition name="slowFade">
-            <router-link to="/Secret" class="secret" v-show="secret">Secret Found</router-link>
-        </transition>
+        <div class="padd" style="background-color: #f4f4f4;">
+            <h1>Skills</h1>
+            <div class="row" style="width: 80%; margin: auto;">
+                <div class="col">
+                    <div style="width: 90%">
+                        <p>C#</p>
+                        <progress-bar :progress="70"></progress-bar>
+                    </div>
+                    <div style="width: 90%">
+                        <p>C/C++</p>
+                        <progress-bar :progress="45"></progress-bar>
+                    </div>
+                    <div style="width: 90%">
+                        <p>Unity (Game Engine)</p>
+                        <progress-bar :progress="80"></progress-bar>
+                    </div>
+                    <div style="width: 90%">
+                        <p>Web Development</p>
+                        <progress-bar :progress="60"></progress-bar>
+                    </div>
+                </div>
+                <div class="col">
+                    <div style="width: 90%">
+                        <p>Game Development</p>
+                        <progress-bar :progress="80"></progress-bar>
+                    </div>
+                    <div style="width: 90%">
+                        <p>Object Oriented Programming</p>
+                        <progress-bar :progress="70"></progress-bar>
+                    </div>
+                    <div style="width: 90%">
+                        <p>System Design</p>
+                        <progress-bar :progress="50"></progress-bar>
+                    </div>
+                    <div style="width: 90%">
+                        <p>Hunger</p>
+                        <progress-bar :progress="80"></progress-bar>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </section>
 </template>
 
 <script>
+import ProgressBar from '../components/ProgressBar.vue'
 export default {
+    components: { ProgressBar },
     data() {
         return {
-            name: null,
-            date: null,
-            count: 0, // pathetic way to get text to keep using transition
-            result: false,
-            error: false,
-            secret: false,
+
         }
     },
     methods: {
-        CheckForm() {
-            if (this.name && this.date) {
-                this.result = true;
-                this.error = false;
-                this.count++;
-                if (this.name.toLowerCase() == "cheater") {
-                    this.secret = true;
-                }
-            }
-            else {
-                this.error = true;
-            }
-        }
+
     }
 }
 </script>
 
 <style scoped>
-input {
-    margin-right: 1%;
-    padding: 1%;
-    border-radius: 3px;
+.padd {
+    display: block;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
-.error {
-    color: rgb(196, 0, 0);
-    font-size: 1.2em;
+.row {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.result {
-    color: rgb(65, 18, 110);
-    font-size: 1.5em;
+.col {
+    flex: 0 0 auto;
+    width: 50%;
 }
 
-.secret {
-    color: rgb(73, 200, 141);
-    font-size: 1.5em;
+.progress-bar {
+    width: 100%;
+    background-color: grey;
 }
 
-/*--------- TRANSITIONS  ---------*/
-.fadeText-enter-active,
-.fadeText-leave-active {
-    transition: opacity 2.25s ease;
+.progress-bar-inner {
+    width: 1%;
+    height: 30px;
+    background-color: green;
 }
 
-.fadeText-enter-from,
-.fadeText-leave-to {
-    opacity: 0;
-}
-
-.slowFade-enter-active,
-.slowFade-leave-active {
-    transition: opacity 5s ease;
-}
-
-.slowFade-enter-from,
-.slowFade-leave-to {
-    opacity: 0;
+#odd_pixel {
+    width: 1em;
+    height: 1em;
+    background: rgb(245, 245, 245);
 }
 </style>

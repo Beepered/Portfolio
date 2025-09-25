@@ -1,24 +1,24 @@
-<!-- Run npm run deploy to update/deploy github pages version -->
+<!-- "npm run deploy" to update/deploy github pages version -->
 
 <script setup>
-import ProgressBar from '@components/ProgressBar.vue'
+import LoadingBar from '@components/LoadingBar.vue'
 import NavBar from './components/NavBar.vue';
 import BottomBar from './components/BottomBar/BottomBar.vue';
-import Nav from './components/Nav.vue';
 </script>
 
 <template>
-  <transition name="GrowFade" @after-leave="page_loaded = true">
-    <section v-if="!progress_complete">
-      <ProgressBar @progress_complete="progress_complete = true" />
-    </section>
-  </transition>
+  <div class="progress-bar">
+    <transition name="GrowFade" @after-leave="page_loaded = true">
+      <section v-if="!progress_complete">
+        <LoadingBar @progress_complete="progress_complete = true" />
+      </section>
+    </transition>
+  </div>
 
   <!-- router -->
   <transition name="fade">
     <section v-if="page_loaded">
       <NavBar></NavBar>
-      <!-- <Nav></Nav> -->
 
       <router-view v-slot="{ Component }">
         <Transition name="fade" mode="out-in">
@@ -29,12 +29,13 @@ import Nav from './components/Nav.vue';
       <BottomBar></BottomBar>
     </section>
   </transition>
+
 </template>
 
 <script>
 export default {
   name: 'App',
-  components: { ProgressBar },
+  components: { LoadingBar },
   data() {
     return {
       progress_complete: false,
@@ -55,6 +56,12 @@ export default {
   text-align: center;
   color: #273d53;
 }
+
+.progress-bar {
+  position: absolute;
+  top: 50%;
+}
+
 
 /*--------- TRANSITIONS  ---------*/
 .fade-enter-active,
