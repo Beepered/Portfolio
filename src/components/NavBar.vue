@@ -1,29 +1,31 @@
-<!-- https://www.youtube.com/watch?v=CfTvye31Ad0&ab_channel=JustinBrooks -->
-
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/About">About Me</router-link> |
+    <router-link class="route" to="/">Home</router-link>
+    <router-link class="route" :to="{ name: 'About' }">About Me</router-link>
     <div class="dropdown">
-      <button class="dropbtn">Games</button>
+      <button class="dropbtn">Portfolio</button>
       <div class="dropdown-content">
-        <router-link to="/CtC">Cash the Cache</router-link>
-        <router-link to="/Fight">Fight Game</router-link>
+        <router-link :to="{ name: 'CtC' }">Cash the Cache</router-link>
+        <router-link :to="{ name: 'Fight' }">Fight Game</router-link>
+        <router-link :to="{ name: 'Pokedex' }">Pokedex</router-link>
       </div>
     </div>
   </div>
 </template>
 
+<script>
+export default {};
+</script>
+
+
 <style>
 /* nav */
 #nav {
   background-color: #e7e7e7;
-  padding-top: 0.4em;
-  padding-bottom: 0.4em;
-  z-index: 1;
-  width: 100vw;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   left: 0;
-  top: 0;
+  right: 0;
 }
 
 #nav a {
@@ -44,11 +46,15 @@
   text-shadow: 2px 2px #ababab;
 }
 
+.route {
+  margin: 0.3em;
+}
+
 /**** drop down ****/
 .dropbtn {
   background-color: rgb(210, 210, 210);
   color: #273d53;
-  padding: 12%;
+  padding: 0.5em;
   font-size: 1.5em;
   font-weight: bold;
   border: none;

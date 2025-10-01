@@ -6,6 +6,7 @@ import CtC from '@pages/CtC.vue'
 import Fight from '@pages/Fight.vue'
 import Funny from '@pages/Funny.vue'
 import Secret from '@pages/Secret.vue'
+import Pokedex from '@pages/Pokedex.vue'
 
 const routes = [
   {
@@ -21,7 +22,10 @@ const routes = [
   {
     path: '/CtC',
     name: 'CtC',
-    component: CtC
+    component: CtC,
+    meta: {
+      backgroundColor: "black"
+    }
   },
   {
     path: '/Fight',
@@ -36,7 +40,15 @@ const routes = [
   {
     path: '/Secret',
     name: 'Secret',
-    component: Secret
+    component: Secret,
+    meta: {
+      backgroundColor: "black"
+    }
+  },
+  {
+    path: '/Poke',
+    name: 'Pokedex',
+    component: Pokedex
   },
 ]
 

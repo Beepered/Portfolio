@@ -1,7 +1,7 @@
 <template>
     <section>
         <router-link to="/Funny">
-            <div id="odd_pixel"></div>
+            <div id="odd_pixel" :style="`margin-left: ${margin}%`"></div>
         </router-link>
 
         <div class="padd" style="padding-top: 1em">
@@ -62,11 +62,25 @@ export default {
     components: { ProgressBar },
     data() {
         return {
-
+            margin: 0,
+            direction: 1,
         }
     },
     methods: {
+        MovePixel() {
+            const intervalTime = 100; // Milliseconds for each progress increment
+            const moveAmt = 0.5;
 
+            const movement = setInterval(() => {
+                this.margin += moveAmt * this.direction
+                if (this.margin >= 100 || this.margin <= 0) {
+                    this.direction *= -1;
+                }
+            }, intervalTime);
+        },
+    },
+    beforeMount() {
+        this.MovePixel();
     }
 }
 </script>
@@ -102,6 +116,6 @@ export default {
 #odd_pixel {
     width: 1em;
     height: 1em;
-    background: rgb(245, 245, 245);
+    background: rgb(248, 248, 248);
 }
 </style>

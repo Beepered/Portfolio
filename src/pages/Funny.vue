@@ -1,5 +1,6 @@
 <template>
     <section>
+        <h1>Welcome!</h1>
         <div class="img">
             <img src="@assets/img/gangnam.gif" alt="Who cares about alt text" style="width:13%">
             <img src="@assets/img/thanos.gif" alt="It's a gif of Thanos twerking" style="width:13%">
@@ -8,6 +9,7 @@
                     src="@assets/img/geras.gif" alt="Geras MK1 combo" style="width:26%; cursor: default;"></a>
             <!-- You see this? -->
             <img src="@assets/img/rat-lunge.gif" alt="Have at thee" style="width:15%">
+            <img src="@assets/img/foxy.gif" alt="AAAAAAAAA" style="width:20%">
             <p>I can do whatever I want. This is <i>MY</i> portfolio wahhahaha</p>
         </div>
 
@@ -25,6 +27,15 @@
         <transition name="slowFade">
             <router-link to="/Secret" class="secret" v-show="secret">Secret Found</router-link>
         </transition>
+
+        <div class="img" style="margin-top: 2em;">
+            <img src="@assets/img/chica.gif" alt="I'm feeling romantical" style="width:15%">
+            <img src="@assets/img/fall.gif" alt="Falling up stairs" style="width:20%">
+            <img src="@assets/img/brick.gif" alt="Ouch" style="width:20%">
+            <img src="@assets/img/dance.gif" alt="Impressive moves" style="width:18%">
+            <img src="@assets/img/monopoly.gif" alt="Hit that" style="width:18%">
+        </div>
+        <!-- Judge all you want, you can't do anything-->
 
     </section>
 </template>
@@ -68,6 +79,7 @@ input {
 
 .img {
     display: inline-block;
+    width: 80%;
 }
 
 .error {

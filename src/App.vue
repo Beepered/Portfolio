@@ -2,8 +2,10 @@
 
 <script setup>
 import LoadingBar from '@components/LoadingBar.vue'
-import NavBar from './components/NavBar.vue';
-import BottomBar from './components/BottomBar/BottomBar.vue';
+import NavBar from '@components/NavBar.vue';
+import Nav from '@components/Nav.vue';
+import Nav2 from '@components/Nav2.vue';
+import BottomBar from '@components/BottomBar/BottomBar.vue';
 </script>
 
 <template>
@@ -42,6 +44,16 @@ export default {
       page_loaded: false,
     }
   },
+  watch: { // idiotically, difficult way to change background color
+    $route: {
+      handler(to) {
+        const body = document.body;
+        const color = to.meta.backgroundColor || 'white'; // Default color
+        body.style.backgroundColor = color;
+      },
+      immediate: true,
+    },
+  },
   methods: {
 
   }
@@ -66,7 +78,7 @@ export default {
 /*--------- TRANSITIONS  ---------*/
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.75s ease;
+  transition: opacity 0.7s ease;
 }
 
 .fade-enter-from,

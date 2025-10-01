@@ -37,6 +37,10 @@ export default {
     transition: 0.3s ease
 }
 
+.collapse {
+    position: absolute;
+}
+
 .collapse-icon {
     position: absolute;
     padding-left: 2%;

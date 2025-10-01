@@ -1,85 +1,43 @@
 <template>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <router-link to="/">MyLogo</router-link>
+    <p>Nav</p>
+    <div id="nav">
+        <ul v-show="!mobile" class="navigation">
+            <router-link class="route" to="/">Home</router-link>
+            <router-link class="route" to="/About">About Me</router-link>
+            <div class="dropdown">
+                <button class="dropbtn">Portfolio</button>
+                <div class="dropdown-content">
+                    <router-link to="/CtC">Cash the Cache</router-link>
+                    <router-link to="/Fight">Fight Game</router-link>
+                    <router-link to="/Poke">Pokedex</router-link>
+                </div>
             </div>
-            <div class="menu-icon" @click="toggleMenu">
-                <i :class="isOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
-            </div>
-            <ul :class="{ 'nav-links': true, 'open': isOpen }">
-                <li><router-link to="/" @click="closeMenu">Home</router-link></li>
-                <li><router-link to="/CtC" @click="closeMenu">CtC</router-link></li>
-                <li><router-link to="/Fight" @click="closeMenu">Fight</router-link></li>
-                <li><router-link to="/Secret" @click="closeMenu">Secret</router-link></li>
-            </ul>
+        </ul>
+        <div class="icon">
+            <i @click="toggleMobileNav" v-show="mobile" :class="{ 'icon-active': mobileNav }"></i>
         </div>
-    </nav>
+        <transition name="mobile-nav">
+            <ul v-show="mobileNav" class="dropdown-nav">
+                <router-link class="route" to="/">Home</router-link>
+                <router-link class="route" to="/About">About Me</router-link>
+                <div class="dropdown">
+                    <button class="dropbtn">Portfolio</button>
+                    <div class="dropdown-content">
+                        <router-link to="/CtC">Cash the Cache</router-link>
+                        <router-link to="/Fight">Fight Game</router-link>
+                        <router-link to="/Poke">Pokedex</router-link>
+                    </div>
+                </div>
+            </ul>
+        </transition>
+    </div>
 </template>
 
 <script>
-export default {
-    name: 'Navbar',
-    data() {
-        return {
-            isOpen: false,
-        }
-    },
-    methods: {
-        toggleMenu() {
-            this.isOpen = !this.isOpen
-        },
-        closeMenu() {
-            this.isOpen = false
-        }
-    }
-}
+export default {};
 </script>
 
-<style scoped>
-/* Basic Styles */
-.navbar {
-    background-color: #333;
-    padding: 1rem;
-    color: white;
-}
 
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Logo */
-.logo a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-/* Navigation Links */
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-}
-
-.nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-    color: #1e90ff;
-}
-
-/* Hamburger Menu */
-.menu-icon {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
+<style>
+/* nav */
 </style>

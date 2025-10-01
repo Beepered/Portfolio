@@ -1,18 +1,20 @@
 <template>
     <section>
-        <div class="padd" style="padding-top: 1em">
+        <div class="padd" style="padding-top: 0.75em">
             <h1>Brendan Trieu</h1>
             <p>Hey-o! This is Brendan Trieu's portfolio, a place where I delve further into my projects the process and
                 a bunch of other random stuff.</p>
         </div>
 
         <div class="about-me padd">
-            <div class="col">
+            <div class="col" style="width: 40%;">
                 <img src="@assets/img/me.jpg" style="height:20em; border-radius: 25%;">
             </div>
-            <div class="col">
-                <h2 style="font-size: 2em;">About Me</h2>
-                <p>My name is Brendan Trieu. I graduated UC: Santa Cruz with a Bachelor of Science in Computer Science:
+            <div class="col" style="width: 40%;">
+                <p>My name is Brendan Trieu. I graduated UC: Santa Cruz with a
+                    Bachelor of
+                    Science in
+                    Computer Science:
                     Computer Game Design.
                     I am passionate about programming and creating thing with my skills, whether it is video games or
                     drawings.
@@ -22,28 +24,40 @@
             </div>
         </div>
 
-        <div class="padd">
+        <div class="padd" style="margin: auto; width: 70%;">
             <p>As a game designer, I like to play games, make games, and talk about games. I am also very passionate
                 about
                 drawing and animating which you can see in my games.</p>
             <p>Click around and read! If not, sit around and lets talk. Umm... come here often?</p>
-            <p>Visit my <a href="https://sites.google.com/view/brendan-trieu-portfolio/home" target="_blank">old
+            <p>View my <a href="https://sites.google.com/view/brendan-trieu-portfolio/home" target="_blank">old
                     portfolio
                     website</a></p>
 
-            <QuoteGenerator></QuoteGenerator>
+            <QuoteGenerator style="font-size: 1.1em;"></QuoteGenerator>
         </div>
 
         <div class="footer">
-            <a href="https://www.linkedin.com/in/brendan-trieu-882753266/" target="_blank"
-                class="social_link">Linkedin<img src="@assets/icons/linkedin.png" class="icon"></a>
-            <a href="https://luminice-star.itch.io/" target="_blank" class="social_link">itch.io<img
-                    src="@assets/icons/itch.png" class="icon"></a>
+            <div class="social_link">
+                <a href="https://www.linkedin.com/in/brendan-trieu-882753266/" target="_blank"
+                    style="float: left;">Linkedin<img src="@assets/icons/linkedin.png" class="icon"
+                        style="float: right;"></a>
+            </div>
 
-            <a href="https://github.com/Beepered" target="_blank" class="social_link">Github<img
-                    src="@assets/icons/github.png" class="icon"></a>
-            <a href="mailto:bktrieu@gmail.com" target="_blank" class="social_link">Email<img
-                    src="@assets/icons/email.png" class="icon"></a>
+            <div class="social_link">
+                <a href="https://luminice-star.itch.io/" target="_blank" style="float: left;">itch.io<img
+                        src="@assets/icons/itch.png" class="icon" style="float: right;"></a>
+            </div>
+
+            <div class="social_link">
+                <a href="https://github.com/Beepered" target="_blank" style="float: left;">Github<img
+                        src="@assets/icons/github.png" class="icon" style="float: right;"></a>
+            </div>
+
+            <div class="social_link">
+                <a href="mailto:bktrieu@gmail.com" target="_blank" style="float: left;">Email<img
+                        src="@assets/icons/email.png" class="icon" style="float: right;"></a>
+            </div>
+
         </div>
 
 
@@ -72,15 +86,19 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+* {
+    border: 2px red
+}
+
 .footer {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 15px;
-    width: 60%;
-    margin-top: 5%;
+    padding: 12px;
+    width: 60vw;
+    margin-top: 1em;
     bottom: 0;
     left: 0;
     border-radius: 6px;
@@ -102,15 +120,15 @@ export default {
 
 .col {
     flex: 0 0 auto;
-    width: 40%;
+    align-content: center;
 }
 
 .social_link {
-    width: 12%;
-    padding: 1%;
+    padding: 0.5em;
     display: flex;
     justify-content: center;
-    font-size: large;
+    font-size: 1.2em;
+
 }
 
 .icon {
