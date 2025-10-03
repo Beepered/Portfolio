@@ -3,8 +3,6 @@
 <script setup>
 import LoadingBar from '@components/LoadingBar.vue'
 import NavBar from '@components/NavBar.vue';
-import Nav from '@components/Nav.vue';
-import Nav2 from '@components/Nav2.vue';
 import BottomBar from '@components/BottomBar/BottomBar.vue';
 </script>
 
@@ -15,6 +13,9 @@ import BottomBar from '@components/BottomBar/BottomBar.vue';
         <LoadingBar @progress_complete="progress_complete = true" />
       </section>
     </transition>
+    <section v-if="!progress_complete"> <!-- Dumb way for hide on click -->
+      <p class="skip-loading" @click="page_loaded = true; progress_complete = true">Skip Loading</p>
+    </section>
   </div>
 
   <!-- router -->
@@ -74,6 +75,13 @@ export default {
   top: 50%;
 }
 
+.skip-loading {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: rgb(182, 182, 182);
+}
 
 /*--------- TRANSITIONS  ---------*/
 .fade-enter-active,

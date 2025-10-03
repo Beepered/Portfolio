@@ -2,33 +2,81 @@
     <section>
         <div class="padd" style="padding-top: 0.75em">
             <h1>Brendan Trieu</h1>
-            <p>Hey-o! This is Brendan Trieu's portfolio, a place where I delve further into my projects the process and
+            <p style="font-size: 1.3em;">Hey-o! This is Brendan Trieu's portfolio, a place where I delve further into my
+                projects the process and
                 a bunch of other random stuff.</p>
         </div>
 
-        <div class="about-me padd">
-            <div class="col" style="width: 40%;">
-                <img src="@assets/img/me.jpg" style="height:20em; border-radius: 25%;">
+        <div style="background-color: #f4f4f4; margin: 0;">
+            <div class="block">
+                <div class="col" style="width: 40%">
+                    <img src="@assets/img/me.jpg" style="height:20em; border-radius: 25%;">
+                </div>
+                <div class="col">
+                    <p>My name is Brendan Trieu. I graduated UC: Santa Cruz with a
+                        Bachelor of
+                        Science in
+                        Computer Science:
+                        Computer Game Design.
+                        I am passionate about programming and creating thing with my skills, whether it is video games
+                        or
+                        drawings.
+                        Though I have a degree in game design, programming interests me as a whole,
+                        and I would like to learn more and experience software development as a whole.
+                    </p>
+                    <div style="margin-top: 2em;">
+                        <p><b>Blood type:</b> H</p>
+                        <p><b>Height:</b> 72cm (5.9 ft)</p>
+                        <p><b>Favorite Food:</b> Chitin, Caramel, Noodles</p>
+                    </div>
+                    <div style="margin-top: 2em;">
+                        <a href="https://docs.google.com/document/d/1Y3NPLMJ7Zu68bm68akAthKcHAYK8E-DX4vM7Souc_6o/edit?tab=t.0#heading=h.e8nqy5ycl96p"
+                            target="_blank" class="resume-btn">Resume</a>
+                    </div>
+                </div>
             </div>
-            <div class="col" style="width: 40%;">
-                <p>My name is Brendan Trieu. I graduated UC: Santa Cruz with a
-                    Bachelor of
-                    Science in
-                    Computer Science:
-                    Computer Game Design.
-                    I am passionate about programming and creating thing with my skills, whether it is video games or
-                    drawings.
-                    Though I have a degree in game design, programming interests me as a whole,
-                    and I would like to learn more and experience software development as a whole.
-                </p>
+        </div>
+
+        <div class="block">
+            <div class="col">
+                <div style="width: 90%">
+                    <p>C#</p>
+                    <progress-bar :progress="70" style="width: 80%; margin: auto;"></progress-bar>
+                </div>
+                <div style="width: 90%">
+                    <p>C/C++</p>
+                    <progress-bar :progress="50" style="width: 80%; margin: auto;"></progress-bar>
+                </div>
+                <div style="width: 90%">
+                    <p>Unity (Game Engine)</p>
+                    <progress-bar :progress="90" style="width: 80%; margin: auto;"></progress-bar>
+                </div>
+                <div style="width: 90%">
+                    <p>Godot (Game Engine)</p>
+                    <progress-bar :progress="75" style="width: 80%; margin: auto;"></progress-bar>
+                </div>
+            </div>
+            <div class="col">
+                <div style="width: 90%">
+                    <p>Game Development</p>
+                    <progress-bar :progress="85" style="width: 80%; margin: auto;"></progress-bar>
+                </div>
+                <div style="width: 90%">
+                    <p>Object Oriented Programming</p>
+                    <progress-bar :progress="70" style="width: 80%; margin: auto;"></progress-bar>
+                </div>
+                <div style="width: 90%">
+                    <p>System Design</p>
+                    <progress-bar :progress="50" style="width: 80%; margin: auto;"></progress-bar>
+                </div>
+                <div style="width: 90%">
+                    <p>Hunger</p>
+                    <progress-bar :progress="80" style="width: 80%; margin: auto;"></progress-bar>
+                </div>
             </div>
         </div>
 
         <div class="padd" style="margin: auto; width: 70%;">
-            <p>As a game designer, I like to play games, make games, and talk about games. I am also very passionate
-                about
-                drawing and animating which you can see in my games.</p>
-            <p>Click around and read! If not, sit around and lets talk. Umm... come here often?</p>
             <p>View my <a href="https://sites.google.com/view/brendan-trieu-portfolio/home" target="_blank">old
                     portfolio
                     website</a></p>
@@ -61,36 +109,46 @@
         </div>
 
 
+        <div id="odd_pixel" @click="this.$router.push('/Funny')" :style="`margin-left: ${margin}%;`"></div>
     </section>
 </template>
 
 <script>
-import QuoteGenerator from '@/components/QuoteGenerator.vue';
+import QuoteGenerator from '@components/QuoteGenerator.vue';
+import ProgressBar from '@components/ProgressBar.vue'
 
 export default {
     name: 'Home',
     components: {
-        QuoteGenerator
+        QuoteGenerator,
+        ProgressBar
     },
     data() {
         return {
-
+            margin: 0,
+            direction: 1,
         }
     },
     methods: {
+        MovePixel() {
+            const intervalTime = 200; // Milliseconds for each progress increment
+            const moveAmt = 0.5;
 
+            setInterval(() => {
+                this.margin += moveAmt * this.direction
+                if (this.margin >= 100 || this.margin <= 0) {
+                    this.direction *= -1;
+                }
+            }, intervalTime);
+        },
     },
     beforeMount() {
-
+        this.MovePixel();
     }
 }
 </script>
 
 <style scoped>
-* {
-    border: 2px red
-}
-
 .footer {
     margin: auto;
     display: flex;
@@ -105,22 +163,30 @@ export default {
     background-color: #f4f4f4;
 }
 
-.about-me {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #f4f4f4;
-    padding-top: 2em;
-    padding-bottom: 2em;
-}
-
 .padd {
     padding-top: 2em;
     padding-bottom: 2em;
 }
 
-.col {
-    flex: 0 0 auto;
-    align-content: center;
+.block {
+    display: flex;
+    padding: 1.5em;
+}
+
+.block>div.col {
+    float: left;
+    text-align: center;
+    padding: 1em;
+    width: 50%;
+}
+
+.resume-btn {
+    padding: 0.5em;
+    border: 2px solid rgb(67, 67, 67);
+    background-color: white;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: rgb(0, 0, 0);
 }
 
 .social_link {
@@ -128,11 +194,17 @@ export default {
     display: flex;
     justify-content: center;
     font-size: 1.2em;
-
 }
 
 .icon {
     padding-left: 1em;
     height: 2em;
+}
+
+#odd_pixel {
+    width: 1em;
+    height: 1em;
+    margin-top: 2em;
+    background: rgb(248, 248, 248);
 }
 </style>

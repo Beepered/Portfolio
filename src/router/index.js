@@ -1,60 +1,54 @@
-import { createRouter, createMemoryHistory } from 'vue-router'
+import { createRouter, createMemoryHistory } from "vue-router";
 
-import Home from '@pages/Home.vue'
-import About from '@pages/About.vue'
-import CtC from '@pages/CtC.vue'
-import Fight from '@pages/Fight.vue'
-import Funny from '@pages/Funny.vue'
-import Secret from '@pages/Secret.vue'
-import Pokedex from '@pages/Pokedex.vue'
+import Home from "@pages/Home.vue";
+import CtC from "@pages/CtC.vue";
+import Fight from "@pages/Fight.vue";
+import OtherProjects from "@pages/Other-Projects.vue";
+import Funny from "@pages/Funny.vue";
+import Secret from "@pages/Secret.vue";
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: Home,
   },
   {
-    path: '/About',
-    name: 'About',
-    component: About
-  },
-  {
-    path: '/CtC',
-    name: 'CtC',
+    path: "/CtC",
+    name: "CtC",
     component: CtC,
+  },
+  {
+    path: "/Fight",
+    name: "Fight",
+    component: Fight,
+  },
+  {
+    path: "/OtherProjects",
+    name: "OtherProjects",
+    component: OtherProjects,
+  },
+  {
+    path: "/Funny",
+    name: "Funny",
+    component: Funny,
     meta: {
-      backgroundColor: "black"
-    }
+      backgroundColor: "##292929",
+    },
   },
   {
-    path: '/Fight',
-    name: 'Fight',
-    component: Fight
-  },
-  {
-    path: '/Funny',
-    name: 'Funny',
-    component: Funny
-  },
-  {
-    path: '/Secret',
-    name: 'Secret',
+    path: "/Secret",
+    name: "Secret",
     component: Secret,
     meta: {
-      backgroundColor: "black"
-    }
+      backgroundColor: "black",
+    },
   },
-  {
-    path: '/Poke',
-    name: 'Pokedex',
-    component: Pokedex
-  },
-]
+];
 
 const router = createRouter({
   history: createMemoryHistory(),
   routes,
-})
+});
 
-export default router
+export default router;

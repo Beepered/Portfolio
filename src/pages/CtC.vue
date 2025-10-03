@@ -49,7 +49,6 @@
 
 <style scoped>
 .top {
-    width: 100%;
     background-image: "@assets/img/me.jpg";
 }
 
@@ -61,9 +60,5 @@
     background-color: rgb(62, 62, 62);
     color: rgb(235, 235, 235);
     border-radius: 10px;
-}
-
-section {
-    background-color: black;
 }
 </style>

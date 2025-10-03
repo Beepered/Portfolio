@@ -26,12 +26,12 @@ export default {
     border: 3px solid rgb(109, 109, 109);
     border-radius: 5px;
     position: relative;
-    overflow: hidden;
+
 }
 
 #progress_inner {
     height: 100%;
-    background-image: linear-gradient(to right, #60dfcc, #456ae4);
+    background-image: linear-gradient(to right, #58d1bf, #354bdc);
     border-radius: 5px;
 }
 </style>

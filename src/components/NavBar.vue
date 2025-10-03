@@ -1,15 +1,20 @@
 <template>
   <div id="nav">
     <router-link class="route" to="/">Home</router-link>
-    <router-link class="route" :to="{ name: 'About' }">About Me</router-link>
+    <router-link class="route" :to="{ name: 'CtC' }">Cash the Cache</router-link>
+    <router-link class="route" :to="{ name: 'Fight' }">Fight Game</router-link>
+    <router-link class="route" :to="{ name: 'OtherProjects' }">Other Projects</router-link>
+    <!--
+    
     <div class="dropdown">
       <button class="dropbtn">Portfolio</button>
+      
       <div class="dropdown-content">
         <router-link :to="{ name: 'CtC' }">Cash the Cache</router-link>
         <router-link :to="{ name: 'Fight' }">Fight Game</router-link>
-        <router-link :to="{ name: 'Pokedex' }">Pokedex</router-link>
       </div>
     </div>
+    -->
   </div>
 </template>
 
@@ -30,7 +35,7 @@ export default {};
 
 #nav a {
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 1.5em;
   color: rgb(24, 44, 180);
 }
 
@@ -41,13 +46,13 @@ export default {};
 
 #nav a.router-link-exact-active {
   /* nav selected */
-  font-size: 1.6em;
+  font-size: 1.75em;
   color: rgb(56, 189, 255);
   text-shadow: 2px 2px #ababab;
 }
 
 .route {
-  margin: 0.3em;
+  margin: 1em;
 }
 
 /**** drop down ****/

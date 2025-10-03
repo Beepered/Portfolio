@@ -54,7 +54,6 @@
 .head {
     left: 0;
     right: 0;
-    background-color: rgb(227, 227, 227);
 }
 
 .block {

@@ -1,39 +1,41 @@
 <template>
     <section>
-        <h1>Welcome!</h1>
-        <div class="img">
+        <h1 style="color: white;">Welcome!</h1>
+        <div class="img" style="margin-bottom: 3em;">
+            <!-- You see this? -->
             <img src="@assets/img/gangnam.gif" alt="Who cares about alt text" style="width:13%">
-            <img src="@assets/img/thanos.gif" alt="It's a gif of Thanos twerking" style="width:13%">
             <img src="@assets/img/cat-water.gif" alt="Blah blah blah. Runs away on all four" style="width:12%">
             <a href="https://www.youtube.com/watch?v=gRpLPv41WxA&ab_channel=SuperGuy" target="_blank"><img
                     src="@assets/img/geras.gif" alt="Geras MK1 combo" style="width:26%; cursor: default;"></a>
-            <!-- You see this? -->
+            <img src="@assets/img/twerk.gif" alt="Funny twerking dog" style="width:15%">
             <img src="@assets/img/rat-lunge.gif" alt="Have at thee" style="width:15%">
-            <img src="@assets/img/foxy.gif" alt="AAAAAAAAA" style="width:20%">
-            <p>I can do whatever I want. This is <i>MY</i> portfolio wahhahaha</p>
         </div>
 
-        <p>I can predict your future. Please enter your name and birthday.</p>
-        <input type="text" maxLength=25 size=27 v-model="name">
-        <input type="date" id="birthday" v-model="date">
-        <button @click="CheckForm">Submit</button>
-        <p class="error" v-show="error">Nuh uh. You need to fill it all out</p>
+        <div class="middle">
+            <p>I can do whatever I want. This is <i>MY</i> portfolio wahhahaha</p>
+            <p>I can predict your future. Please enter your name and birthday.</p>
+            <input type="text" maxLength=25 size=27 v-model="name">
+            <input type="date" id="birthday" v-model="date">
+            <button class="submit-btn" @click="CheckForm">Submit</button>
+            <p class="error" v-show="error">Nuh uh. You need to fill it all out</p>
 
-        <p><b>Your result: </b></p>
-        <transition name="fadeText">
-            <p class="result" v-show="result" :key="count">Dead</p>
-        </transition>
+            <p><b>Your result: </b></p>
+            <transition name="fadeText">
+                <p class="result" v-show="result" :key="count">Dead</p>
+            </transition>
+        </div>
 
         <transition name="slowFade">
             <router-link to="/Secret" class="secret" v-show="secret">Secret Found</router-link>
         </transition>
 
-        <div class="img" style="margin-top: 2em;">
+        <div class="img" style="margin-top: 3em;">
             <img src="@assets/img/chica.gif" alt="I'm feeling romantical" style="width:15%">
             <img src="@assets/img/fall.gif" alt="Falling up stairs" style="width:20%">
             <img src="@assets/img/brick.gif" alt="Ouch" style="width:20%">
             <img src="@assets/img/dance.gif" alt="Impressive moves" style="width:18%">
-            <img src="@assets/img/monopoly.gif" alt="Hit that" style="width:18%">
+            <a href="https://www.youtube.com/shorts/zzClIW2kKQw" target="_blank"><img src="@assets/img/minion.gif"
+                    alt="Popcorn" style="width:18%; cursor: default;"></a>
         </div>
         <!-- Judge all you want, you can't do anything-->
 
@@ -80,6 +82,19 @@ input {
 .img {
     display: inline-block;
     width: 80%;
+}
+
+.middle {
+    margin: auto;
+    width: 70%;
+    padding: 1em;
+    background-color: #f4f4f4;
+    border-radius: 6px;
+}
+
+.submit-btn {
+    border: 2px solid black;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.6);
 }
 
 .error {
