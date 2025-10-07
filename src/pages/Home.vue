@@ -10,7 +10,8 @@
         <div style="background-color: #f4f4f4; margin: 0;">
             <div class="block">
                 <div class="col" style="width: 40%">
-                    <img src="@assets/img/me.jpg" style="height:20em; border-radius: 25%;">
+                    <img src="@assets/img/me.jpg" style="height:20em; border-radius: 25%;"
+                        @click="PlaySound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')">
                 </div>
                 <div class="col">
                     <p>My name is Brendan Trieu. I graduated UC: Santa Cruz with a
@@ -116,6 +117,7 @@
 <script>
 import QuoteGenerator from '@components/QuoteGenerator.vue';
 import ProgressBar from '@components/ProgressBar.vue'
+import sound from '@assets/mp3/random.mp3'
 
 export default {
     name: 'Home',
@@ -141,9 +143,16 @@ export default {
                 }
             }, intervalTime);
         },
+        PlaySound(ref) {
+            console.log("ref: " + ref)
+
+        }
     },
     beforeMount() {
         this.MovePixel();
+    },
+    mounted() {
+
     }
 }
 </script>
@@ -202,9 +211,9 @@ export default {
 }
 
 #odd_pixel {
-    width: 1em;
-    height: 1em;
+    width: 1.2em;
+    height: 1.2em;
     margin-top: 2em;
-    background: rgb(248, 248, 248);
+    background: rgb(250, 250, 250);
 }
 </style>

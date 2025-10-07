@@ -7,15 +7,14 @@ import BottomBar from '@components/BottomBar/BottomBar.vue';
 </script>
 
 <template>
-  <div class="progress-bar">
-    <transition name="GrowFade" @after-leave="page_loaded = true">
-      <section v-if="!progress_complete">
-        <LoadingBar @progress_complete="progress_complete = true" />
-      </section>
-    </transition>
-    <section v-if="!progress_complete"> <!-- Dumb way for hide on click -->
-      <p class="skip-loading" @click="page_loaded = true; progress_complete = true">Skip Loading</p>
-    </section>
+  <transition name="GrowFade" @after-leave="page_loaded = true">
+    <div v-if="!progress_complete" class="progress-bar">
+      <LoadingBar @progress_complete="progress_complete = true" />
+    </div>
+  </transition>
+  <div v-if="!progress_complete" class="skip-container">
+    <!-- Skip loading on click -->
+    <p class="skip-loading" @click="page_loaded = true; progress_complete = true">Skip Loading</p>
   </div>
 
   <!-- router -->
@@ -75,12 +74,24 @@ export default {
   top: 50%;
 }
 
-.skip-loading {
+.skip-container {
+  width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  color: rgb(182, 182, 182);
+  display: grid;
+  place-items: center;
+}
+
+.skip-loading {
+  width: 10%;
+  color: rgb(200, 200, 200);
+  border: 1px solid rgb(190, 190, 190);
+  background-color: rgb(250, 250, 250);
+  border-radius: 3px;
+  padding: 0.2em;
+  cursor: pointer;
 }
 
 /*--------- TRANSITIONS  ---------*/

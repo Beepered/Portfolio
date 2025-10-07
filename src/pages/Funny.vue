@@ -1,6 +1,5 @@
 <template>
-    <section>
-        <h1 style="color: white;">Welcome!</h1>
+    <section style="margin-top: 2em">
         <div class="img" style="margin-bottom: 3em;">
             <!-- You see this? -->
             <img src="@assets/img/gangnam.gif" alt="Who cares about alt text" style="width:13%">

@@ -9,6 +9,7 @@
         <div class="base" :style="{ height: barHeight }">
             <p>This is the bottom bar</p>
             <p>It will hold more stuff later</p>
+            <p>Hire me please! :)</p>
         </div>
     </div>
 </template>
@@ -32,13 +33,10 @@ export default {
     position: fixed;
     display: flex;
     flex-direction: column;
-
-    transition: 0.3s ease
 }
 
 .top {
-    width: 7%;
-    height: 3em;
+    width: 8%;
     background-color: #ececec;
     border-top-style: solid;
     border-top-color: rgb(200, 200, 200);
@@ -53,5 +51,7 @@ export default {
     background-color: #ececec;
     border-top-style: solid;
     border-top-color: rgb(200, 200, 200);
+
+    transition: 0.3s ease
 }
 </style>
