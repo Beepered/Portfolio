@@ -9,12 +9,12 @@ import BottomBar from '@components/BottomBar/BottomBar.vue';
 <template>
   <transition name="GrowFade" @after-leave="page_loaded = true">
     <div v-if="!progress_complete" class="progress-bar">
-      <LoadingBar @progress_complete="progress_complete = true" />
+      <LoadingBar @loading_complete="progress_complete = true" />
     </div>
   </transition>
   <div v-if="!progress_complete" class="skip-container">
     <!-- Skip loading on click -->
-    <p class="skip-loading" @click="page_loaded = true; progress_complete = true">Skip Loading</p>
+    <p class="skip-loading" @click="progress_complete = true">Skip Loading</p>
   </div>
 
   <!-- router -->
@@ -106,7 +106,7 @@ export default {
 }
 
 .GrowFade-leave-active {
-  animation: GrowFade-in 1.25s;
+  animation: GrowFade-in 1.2s;
 }
 
 @keyframes GrowFade-in {

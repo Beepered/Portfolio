@@ -124,6 +124,8 @@ import me3 from '@assets/img/me3.jpg';
 import me4 from '@assets/img/me4.jpg';
 import me5 from '@assets/img/me5.jpg';
 
+const default_image = me;
+
 export default {
     name: 'Home',
     components: {
@@ -163,15 +165,12 @@ export default {
             this.current_image = this.GetRandomImage();
         },
         MeImageLeave() {
-            this.current_image = me;
-        }
+            this.current_image = default_image;
+        },
     },
     beforeMount() {
         this.MovePixel();
     },
-    mounted() {
-
-    }
 }
 </script>
 

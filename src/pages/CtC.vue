@@ -15,7 +15,7 @@
                 buildings to steal items and sell them to buy upgrades. I work on system design, 2D art, trailers, and
                 team management.</p>
         </div>
-        <div class="block">
+        <div class="block" style="width: 60%;">
             <h3>Quarter 1: Scaffolding</h3>
             <p>I designed the interaction
                 system and UI, while my group worked on the AI pathfinding, sounds, and getting assets.
@@ -23,7 +23,7 @@
                 began designing a central level, which helped us see how our ideas working in a plausible level.
             </p>
         </div>
-        <div class="block">
+        <div class="block" style="width: 60%;">
             <h3>Quarter 2: Level generation and level selection</h3>
             <p>I onboarded new members,
                 refactored systems, and focused on new levels. We switched from having a pre-designed level to making
@@ -31,7 +31,7 @@
                 days, offered help, and cleaned up code.
             </p>
         </div>
-        <div class="block">
+        <div class="block" style="width: 60%;">
             <h3>Current: Limbo</h3>
             <p>Most of the team has
                 left or gotten jobs. I enjoyed working on this while the group was still together, but it was been hard
@@ -55,7 +55,7 @@
 .block {
     margin: auto;
     margin-bottom: 1em;
-    width: 80%;
+    width: 70%;
     padding: 1em;
     background-color: rgb(62, 62, 62);
     color: rgb(235, 235, 235);

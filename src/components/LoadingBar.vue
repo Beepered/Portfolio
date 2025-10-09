@@ -14,7 +14,7 @@ https://www.youtube.com/watch?v=-q8rtVK_Z04&t=558s&ab_channel=TylerPotts
 
 <script>
 export default {
-    emits: ["progress_complete"],
+    emits: ["loading_complete"],
     data() {
         return {
             progress: 0
@@ -32,7 +32,7 @@ export default {
                 if (this.progress >= 100) {
                     this.progress = 100;
                     setInterval(() => {
-                        this.$emit("progress_complete")
+                        this.$emit("loading_complete")
                     }, 300)
                 }
             }, intervalTime);

@@ -4,10 +4,10 @@
         <div class="block">
             <div class="col left">
                 <a href="https://mosaicly.io/" target="_blank">
-                    <img src="@assets/img/mosaicly.png" style="width: 70%;">
+                    <img class="fit-image hover-effect" src="@assets/img/mosaicly.png">
                 </a>
             </div>
-            <div class="col right">
+            <div class=" col right">
                 <h2>Mosaicly</h2>
                 <p>TypeScript, SCSS, Svelte</p>
                 <p>Scrum Master for a quarter long agile developed web app to create public interactable canvases
@@ -18,7 +18,7 @@
         <div class="block">
             <div class="col left">
                 <a href="https://luminice-star.itch.io/wypb-special" target="_blank">
-                    <img src="@assets/img/wypb.png" style="width: 70%;">
+                    <img class="fit-image hover-effect" src="@assets/img/wypb.png">
                 </a>
             </div>
             <div class="col right">
@@ -33,7 +33,7 @@
         <div class="block">
             <div class="col left">
                 <a href="https://luminice-star.itch.io/mobile-smash-idea" target="_blank">
-                    <img src="@assets/img/mobile_smash.png" style="width: 30%;">
+                    <img class="fit-image hover-effect" src="@assets/img/mobile_smash.png">
                 </a>
             </div>
             <div class="col right">
@@ -47,7 +47,7 @@
         <div class="block">
             <div class="col left">
                 <a href="https://connor-lynchh.github.io/CMPM-169-Team-Project-Group-8/" target="_blank">
-                    <img src="@assets/img/eerie_watch.png" style="width: 70%;">
+                    <img class="fit-image hover-effect" src="@assets/img/eerie_watch.png">
                 </a>
             </div>
             <div class="col right">
@@ -64,7 +64,16 @@
 </template>
 
 <script>
+export default {
+    data() {
+        return {
 
+        }
+    },
+    methods: {
+
+    }
+}
 </script>
 
 
@@ -72,7 +81,7 @@
 .block {
     display: flex;
     padding: 1.5em;
-    width: 90%;
+    width: 85%;
     margin: auto;
 }
 
@@ -85,16 +94,26 @@
 .block>div.left {
     width: 55%;
     margin-left: 2em;
-    margin-right: 1em;
-}
-
-.block>div.left.img {
-    width: 100%;
-    height: auto;
+    margin-right: 0.5em;
+    max-height: 18em;
 }
 
 .block>div.right {
     width: 45%;
     margin-right: 2em;
+}
+
+.fit-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.hover-effect {
+    transition: 0.2s;
+}
+
+.hover-effect:hover {
+    transform: scale(1.05);
 }
 </style>
