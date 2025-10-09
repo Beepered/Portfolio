@@ -24,7 +24,7 @@ export default {
     height: 1.2em;
     background-color: #b4b4b4;
     border: 3px solid rgb(109, 109, 109);
-    border-radius: 5px;
+    border-radius: 12px;
     position: relative;
 
 }
@@ -32,6 +32,6 @@ export default {
 #progress_inner {
     height: 100%;
     background-image: linear-gradient(to right, #58d1bf, #354bdc);
-    border-radius: 5px;
+    border-radius: 12px;
 }
 </style>

@@ -106,7 +106,7 @@ export default {
 }
 
 .GrowFade-leave-active {
-  animation: GrowFade-in 1.3s;
+  animation: GrowFade-in 1.25s;
 }
 
 @keyframes GrowFade-in {

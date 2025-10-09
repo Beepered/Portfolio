@@ -10,8 +10,8 @@
         <div style="background-color: #f4f4f4; margin: 0;">
             <div class="block">
                 <div class="col" style="width: 40%">
-                    <img src="@assets/img/me.jpg" style="height:20em; border-radius: 25%;"
-                        @click="PlaySound('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')">
+                    <img :src="current_image" style="height:20em; border-radius: 25%;" @click="PlaySound()"
+                        @mouseenter="MeImageEnter()" @mouseleave="MeImageLeave()">
                 </div>
                 <div class="col">
                     <p>My name is Brendan Trieu. I graduated UC: Santa Cruz with a
@@ -117,7 +117,12 @@
 <script>
 import QuoteGenerator from '@components/QuoteGenerator.vue';
 import ProgressBar from '@components/ProgressBar.vue'
-import sound from '@assets/mp3/random.mp3'
+import me from '@assets/img/me.jpg';
+import me1 from '@assets/img/me1.jpg';
+import me2 from '@assets/img/me2.jpg';
+import me3 from '@assets/img/me3.jpg';
+import me4 from '@assets/img/me4.jpg';
+import me5 from '@assets/img/me5.jpg';
 
 export default {
     name: 'Home',
@@ -129,6 +134,10 @@ export default {
         return {
             margin: 0,
             direction: 1,
+            me_images: [
+                me1, me2, me3, me4, me5
+            ],
+            current_image: me,
         }
     },
     methods: {
@@ -144,8 +153,17 @@ export default {
             }, intervalTime);
         },
         PlaySound(ref) {
-            console.log("ref: " + ref)
-
+            console.log("ref: " + ref);
+        },
+        GetRandomImage() {
+            const rand = Math.floor(Math.random() * this.me_images.length);
+            return this.me_images[rand];
+        },
+        MeImageEnter() {
+            this.current_image = this.GetRandomImage();
+        },
+        MeImageLeave() {
+            this.current_image = me;
         }
     },
     beforeMount() {
