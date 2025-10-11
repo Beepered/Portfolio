@@ -2,8 +2,8 @@
 
 <template>
     <div class="bar">
-        <div class="top" @click="ToggleBar">
-            <p style="">Hide</p>
+        <div class="top" style="cursor: pointer;" @click="ToggleBar">
+            <p style="width: 50%; margin: 0 auto;">Hide</p>
         </div>
 
         <div class="base" :style="{ height: barHeight }">
@@ -36,7 +36,8 @@ export default {
 }
 
 .top {
-    width: 8%;
+    width: 7.5%;
+    height: 2.5em;
     background-color: #ececec;
     border-top-style: solid;
     border-top-color: rgb(200, 200, 200);
@@ -44,7 +45,7 @@ export default {
     border-right-color: rgb(200, 200, 200);
     border-top-right-radius: 10px;
     text-align: center;
-    z-index: 1;
+    align-content: center;
 }
 
 .base {
@@ -52,6 +53,6 @@ export default {
     border-top-style: solid;
     border-top-color: rgb(200, 200, 200);
 
-    transition: 0.3s ease
+    transition: 0.3s ease;
 }
 </style>

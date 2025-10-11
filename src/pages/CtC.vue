@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="cursor-hand">
         <div class="top">
             <h1 style="color: rgb(0, 152, 7);">Cash the Cache</h1>
         </div>
@@ -9,7 +9,8 @@
             <p>Break into houses. Steal stuff, sell, repeat. A free to play, 3D Unity game about burglarizing houses.
             </p>
             <p>Release Date: I'm not sure</p>
-            <h3><a href="https://store.steampowered.com/app/3704870/Cash_the_Cache/">Steam Link</a></h3>
+            <h3><a href="https://store.steampowered.com/app/3704870/Cash_the_Cache/" class="cursor-toilet">Steam
+                    Link</a></h3>
 
             <p>I am working as the producer for my college capstone final project. You play as a robber, breaking into
                 buildings to steal items and sell them to buy upgrades. I work on system design, 2D art, trailers, and
@@ -31,7 +32,7 @@
                 days, offered help, and cleaned up code.
             </p>
         </div>
-        <div class="block" style="width: 60%;">
+        <div class="block cursor-toilet" style="width: 60%;">
             <h3>Current: Limbo</h3>
             <p>Most of the team has
                 left or gotten jobs. I enjoyed working on this while the group was still together, but it was been hard
@@ -47,6 +48,11 @@
     </section>
 </template>
 
+<script>
+
+</script>
+
+
 <style scoped>
 .top {
     background-image: "@assets/img/me.jpg";
@@ -60,5 +66,13 @@
     background-color: rgb(62, 62, 62);
     color: rgb(235, 235, 235);
     border-radius: 10px;
+}
+
+.cursor-hand {
+    cursor: url("@assets/img/ctc/cursor.png"), auto;
+}
+
+.cursor-toilet {
+    cursor: url("@assets/img/ctc/cursor toilet.png"), auto;
 }
 </style>

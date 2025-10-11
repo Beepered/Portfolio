@@ -10,8 +10,7 @@
         <div style="background-color: #f4f4f4; margin: 0;">
             <div class="block">
                 <div class="col" style="width: 40%">
-                    <img :src="current_image" style="height:20em; border-radius: 25%;" @click="PlaySound()"
-                        @mouseenter="MeImageEnter()" @mouseleave="MeImageLeave()">
+                    <img :src="current_image" style="height:20em; border-radius: 25%;" @click="ClickMe()">
                 </div>
                 <div class="col">
                     <p>My name is Brendan Trieu. I graduated UC: Santa Cruz with a
@@ -136,6 +135,7 @@ export default {
         return {
             margin: 0,
             direction: 1,
+            clicks: 0,
             me_images: [
                 me1, me2, me3, me4, me5
             ],
@@ -149,24 +149,29 @@ export default {
 
             setInterval(() => {
                 this.margin += moveAmt * this.direction
-                if (this.margin >= 100 || this.margin <= 0) {
+                if (this.margin >= 99 || this.margin <= 0) {
                     this.direction *= -1;
                 }
             }, intervalTime);
         },
         PlaySound(ref) {
-            console.log("ref: " + ref);
+
         },
         GetRandomImage() {
             const rand = Math.floor(Math.random() * this.me_images.length);
             return this.me_images[rand];
         },
-        MeImageEnter() {
-            this.current_image = this.GetRandomImage();
-        },
-        MeImageLeave() {
-            this.current_image = default_image;
-        },
+        ClickMe() {
+            this.clicks++;
+            if (this.clicks >= 10) {
+                this.clicks = 0;
+                this.current_image = this.GetRandomImage();
+                this.PlaySound();
+                setTimeout(() => {
+                    this.current_image = default_image;
+                }, 500);
+            }
+        }
     },
     beforeMount() {
         this.MovePixel();

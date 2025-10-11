@@ -7,14 +7,17 @@ import BottomBar from '@components/BottomBar/BottomBar.vue';
 </script>
 
 <template>
+  <div v-if="!skip"></div> <!-- ignore for now -->
+
   <transition name="GrowFade" @after-leave="page_loaded = true">
     <div v-if="!progress_complete" class="progress-bar">
       <LoadingBar @loading_complete="progress_complete = true" />
     </div>
   </transition>
+
   <div v-if="!progress_complete" class="skip-container">
     <!-- Skip loading on click -->
-    <p class="skip-loading" @click="progress_complete = true">Skip Loading</p>
+    <p class="skip-loading" @click="skip = true; progress_complete = true; page_loaded = true;">Skip Loading</p>
   </div>
 
   <!-- router -->
@@ -24,7 +27,7 @@ import BottomBar from '@components/BottomBar/BottomBar.vue';
 
       <router-view v-slot="{ Component }">
         <Transition name="fade" mode="out-in">
-          <component :is="Component" />
+          <component :is="Component" style="padding-bottom: 145px;" />
         </Transition>
       </router-view>
 
@@ -42,6 +45,7 @@ export default {
     return {
       progress_complete: false,
       page_loaded: false,
+      skip: false
     }
   },
   watch: { // idiotically, difficult way to change background color

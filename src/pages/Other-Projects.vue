@@ -3,8 +3,9 @@
         <h1>Other Projects</h1>
         <div class="block">
             <div class="col left">
-                <a href="https://mosaicly.io/" target="_blank">
-                    <img class="fit-image hover-effect" src="@assets/img/mosaicly.png">
+                <a href="https://mosaicly.io/" target="_blank" style="border: 2px solid red">
+                    <img class="fit-image hover-effect" src="@assets/img/other_projects/mosaicly.png"
+                        alt="Mosaicly image" style="border: 2px solid green">
                 </a>
             </div>
             <div class=" col right">
@@ -18,13 +19,14 @@
         <div class="block">
             <div class="col left">
                 <a href="https://luminice-star.itch.io/wypb-special" target="_blank">
-                    <img class="fit-image hover-effect" src="@assets/img/wypb.png">
+                    <img class="fit-image hover-effect" src="@assets/img/other_projects/wypb.png"
+                        alt="Would you press the button image">
                 </a>
             </div>
             <div class="col right">
                 <h2>Would You Press the Button - Special</h2>
                 <p>Godot, GDScript</p>
-                <p>Convince others whether to press a button or not
+                <p>Director of a game about convincing others whether to press a button or not
                     that
                     can alter your life. Created out of the emotion of "tempt", the game was designed to "tempt someone
                     into doing something".</p>
@@ -33,7 +35,8 @@
         <div class="block">
             <div class="col left">
                 <a href="https://luminice-star.itch.io/mobile-smash-idea" target="_blank">
-                    <img class="fit-image hover-effect" src="@assets/img/mobile_smash.png">
+                    <img class="fit-image hover-effect" src="@assets/img/other_projects/mobile_smash.png"
+                        alt="Mobile Smash image">
                 </a>
             </div>
             <div class="col right">
@@ -47,13 +50,15 @@
         <div class="block">
             <div class="col left">
                 <a href="https://connor-lynchh.github.io/CMPM-169-Team-Project-Group-8/" target="_blank">
-                    <img class="fit-image hover-effect" src="@assets/img/eerie_watch.png">
+                    <img class="fit-image hover-effect" src="@assets/img/other_projects/eerie_watch.png"
+                        alt="Eerie Watch image">
                 </a>
             </div>
             <div class="col right">
                 <h2>EerieWatch</h2>
                 <p>HTML, CSS, JS</p>
-                <p>Work as an agent investigating supernatural events. Read blogs and decide whether to report it and
+                <p>Lead group of software engineers to design a website about working as an agent investigating
+                    supernatural events. Read blogs and decide whether to report it and
                     send a
                     team to investigate further or don't risk it in case it is a fake.
                 </p>
