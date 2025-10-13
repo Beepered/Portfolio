@@ -10,7 +10,7 @@
         <div style="background-color: #f4f4f4; margin: 0;">
             <div class="block">
                 <div class="col" style="width: 40%">
-                    <img :src="current_image" style="height:20em; border-radius: 25%;" @click="ClickMe()">
+                    <img :src="current_image" style="height:20em; border-radius: 20%;" @click="ClickMe()">
                 </div>
                 <div class="col">
                     <p>My name is Brendan Trieu. I graduated UC: Santa Cruz with a

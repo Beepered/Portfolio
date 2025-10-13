@@ -3,14 +3,14 @@
         <h1>Other Projects</h1>
         <div class="block">
             <div class="col left">
-                <a href="https://mosaicly.io/" target="_blank" style="border: 2px solid red">
+                <a href="https://mosaicly.io/" target="_blank" style="">
                     <img class="fit-image hover-effect" src="@assets/img/other_projects/mosaicly.png"
-                        alt="Mosaicly image" style="border: 2px solid green">
+                        alt="Mosaicly image" style="">
                 </a>
             </div>
             <div class=" col right">
                 <h2>Mosaicly</h2>
-                <p>TypeScript, SCSS, Svelte</p>
+                <p class="facts">TypeScript, SCSS, Svelte</p>
                 <p>Scrum Master for a quarter long agile developed web app to create public interactable canvases
                     similar to Pokemon Go.
                 </p>
@@ -25,7 +25,7 @@
             </div>
             <div class="col right">
                 <h2>Would You Press the Button - Special</h2>
-                <p>Godot, GDScript</p>
+                <p class="facts">Godot, GDScript</p>
                 <p>Director of a game about convincing others whether to press a button or not
                     that
                     can alter your life. Created out of the emotion of "tempt", the game was designed to "tempt someone
@@ -41,7 +41,7 @@
             </div>
             <div class="col right">
                 <h2>Mobile Smash Idea</h2>
-                <p>Unity, C#</p>
+                <p class="facts">Unity, C#</p>
                 <p>My take on a vertical mobile game version of Super Smash Bros. Attack by double tapping,
                     swiping, or hold-swiping. Made after a dream about a Super Smash Bros Brawl sequel.
                 </p>
@@ -56,7 +56,7 @@
             </div>
             <div class="col right">
                 <h2>EerieWatch</h2>
-                <p>HTML, CSS, JS</p>
+                <p class="facts">HTML, CSS, JS</p>
                 <p>Lead group of software engineers to design a website about working as an agent investigating
                     supernatural events. Read blogs and decide whether to report it and
                     send a
@@ -112,6 +112,12 @@ export default {
     height: 100%;
     width: 100%;
     object-fit: contain;
+}
+
+.facts {
+    /* for the programming languages part" */
+    color: rgb(110, 110, 110);
+    line-height: 10px;
 }
 
 .hover-effect {

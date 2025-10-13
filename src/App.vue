@@ -7,13 +7,13 @@ import BottomBar from '@components/BottomBar/BottomBar.vue';
 </script>
 
 <template>
-  <div v-if="!skip"></div> <!-- ignore for now -->
-
-  <transition name="GrowFade" @after-leave="page_loaded = true">
-    <div v-if="!progress_complete" class="progress-bar">
-      <LoadingBar @loading_complete="progress_complete = true" />
-    </div>
-  </transition>
+  <div v-if="!skip" style="display: flex; justify-content: center;"> <!-- div for better skip loading -->
+    <transition name="GrowFade" @after-leave="page_loaded = true">
+      <div v-if="!progress_complete" class="progress-bar">
+        <LoadingBar @loading_complete="progress_complete = true" />
+      </div>
+    </transition>
+  </div>
 
   <div v-if="!progress_complete" class="skip-container">
     <!-- Skip loading on click -->
@@ -78,6 +78,7 @@ export default {
   top: 50%;
 }
 
+/* skip loading bar button */
 .skip-container {
   width: 100%;
   position: fixed;
