@@ -31,7 +31,7 @@ export default {
                 this.progress += randomNum;
                 if (this.progress >= 100) {
                     this.progress = 100;
-                    setInterval(() => {
+                    setTimeout(() => {
                         this.$emit("loading_complete")
                     }, 300)
                 }

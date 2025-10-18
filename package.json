@@ -1,8 +1,9 @@
 {
   "name": "Portfolio",
+  "description": "Beepered's portfolio website",
   "homepage": "https://beepered.github.io/Portfolio/",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,6 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "phaser": "^3.90.0",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },

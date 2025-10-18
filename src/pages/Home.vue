@@ -149,7 +149,7 @@ export default {
 
             setInterval(() => {
                 this.margin += moveAmt * this.direction
-                if (this.margin >= 99 || this.margin <= 0) {
+                if (this.margin >= 98 || this.margin <= 0) {
                     this.direction *= -1;
                 }
             }, intervalTime);

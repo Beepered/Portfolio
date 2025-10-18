@@ -1,15 +1,17 @@
 <!-- https://www.youtube.com/watch?v=CfTvye31Ad0&ab_channel=JustinBrooks -->
 
+<script setup>
+import Playground from "./Playground/Playground.vue";
+</script>
+
 <template>
     <div class="bar">
         <div class="top" style="cursor: pointer;" @click="ToggleBar">
             <p style="width: 50%; margin: 0 auto;">Hide</p>
         </div>
 
-        <div class="base" :style="{ height: barHeight }">
-            <p>This is the bottom bar</p>
-            <p>It will hold more stuff later</p>
-            <p>Hire me please! :)</p>
+        <div class="base" :style="{ height: barHeight }" style="display: flex;">
+            <Playground style="margin: auto;"></Playground>
         </div>
     </div>
 </template>
