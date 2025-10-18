@@ -1,5 +1,6 @@
 export class Dummy extends Phaser.Physics.Arcade.Sprite {
-  constructor(scene, x, y, texture, gameSize) {
+  constructor(scene, x, y, gameSize) {
+    let texture = "Dummy";
     super(scene, x, y, texture);
     this.scene.add.existing(this);
 
@@ -7,31 +8,31 @@ export class Dummy extends Phaser.Physics.Arcade.Sprite {
     this.moveSpeed = 0.1;
     this.setInteractive();
 
-    // this.sounds = [];
-    // for (let i = 1; i <= 4; i++) {
-    //   this.sounds.push(
-    //     scene.sound.add(texture + i, {
-    //       volume: 0.75,
-    //     })
-    //   );
-    // }
+    this.sounds = [];
+    for (let i = 1; i <= 4; i++) {
+      this.sounds.push(
+        scene.sound.add(texture + i, {
+          volume: 0.7,
+        })
+      );
+    }
 
-    // this.anims.create({
-    //   key: "idle",
-    //   frames: this.anims.generateFrameNumbers(texture, {
-    //     frameRate: 8,
-    //     start: 0,
-    //     end: 2,
-    //   }),
-    // });
-    // this.anims.create({
-    //   key: "walk",
-    //   frames: this.anims.generateFrameNumbers(texture, {
-    //     frameRate: 8,
-    //     start: 3,
-    //     end: 5,
-    //   }),
-    // });
+    this.anims.create({
+      key: "idle",
+      frames: this.anims.generateFrameNumbers(texture, {
+        frameRate: 8,
+        start: 0,
+        end: 2,
+      }),
+    });
+    this.anims.create({
+      key: "walk",
+      frames: this.anims.generateFrameNumbers(texture, {
+        frameRate: 8,
+        start: 3,
+        end: 5,
+      }),
+    });
 
     this.States = {
       IDLE: "idle",
@@ -48,7 +49,7 @@ export class Dummy extends Phaser.Physics.Arcade.Sprite {
     this.walkX = 0;
     this.walkY = 0;
 
-    // this.on("pointerdown", () => this.OnClick());
+    this.on("pointerdown", () => this.OnClick());
   }
 
   OnClick() {
@@ -65,8 +66,7 @@ export class Dummy extends Phaser.Physics.Arcade.Sprite {
   }
 
   Idle() {
-    // idle animation
-    // this.play("idle", true);
+    this.play("idle", true);
     if (this.time <= 0) {
       this.walkX = Phaser.Math.FloatBetween(-1, 1);
       this.walkY = Phaser.Math.FloatBetween(-1, 1);
@@ -77,7 +77,7 @@ export class Dummy extends Phaser.Physics.Arcade.Sprite {
   }
 
   Walk(walkX, walkY, delta) {
-    // this.play("walk", true);
+    this.play("walk", true);
     this.x += walkX * this.moveSpeed * delta;
     this.y += walkY * this.moveSpeed * delta;
 
