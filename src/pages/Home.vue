@@ -12,7 +12,7 @@
                 <div class="col" style="width: 40%">
                     <img :src="current_image" style="height:20em; border-radius: 20%;" @click="ClickMe()">
                 </div>
-                <div class="col">
+                <div class="col" style="align-content: center;">
                     <p>My name is Brendan Trieu. I graduated UC: Santa Cruz with a
                         Bachelor of
                         Science in
@@ -24,12 +24,12 @@
                         Though I have a degree in game design, programming interests me as a whole,
                         and I would like to learn more and experience software development as a whole.
                     </p>
-                    <div style="margin-top: 2em;">
+                    <!-- <div style="margin-top: 2em;">
                         <p><b>Blood type:</b> H</p>
                         <p><b>Height:</b> 72cm (5.9 ft)</p>
                         <p><b>Favorite Food:</b> Chitin, Caramel, Noodles</p>
-                    </div>
-                    <div style="margin-top: 2em;">
+                    </div> -->
+                    <div style="margin-top: 2.5em;">
                         <a href="https://docs.google.com/document/d/1Y3NPLMJ7Zu68bm68akAthKcHAYK8E-DX4vM7Souc_6o/edit?tab=t.0#heading=h.e8nqy5ycl96p"
                             target="_blank" class="resume-btn">Resume</a>
                     </div>
@@ -71,7 +71,7 @@
                 </div>
                 <div style="width: 90%">
                     <p>Hunger</p>
-                    <progress-bar :progress="80" style="width: 80%; margin: auto;"></progress-bar>
+                    <progress-bar :progress="hunger" style="width: 80%; margin: auto;"></progress-bar>
                 </div>
             </div>
         </div>
@@ -133,6 +133,7 @@ export default {
     },
     data() {
         return {
+            hunger: 0,
             margin: 0,
             direction: 1,
             clicks: 0,
@@ -171,10 +172,16 @@ export default {
                     this.current_image = default_image;
                 }, 500);
             }
+        },
+        RandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
         }
     },
     beforeMount() {
         this.MovePixel();
+        this.hunger = this.RandomInt(30, 100)
     },
 }
 </script>

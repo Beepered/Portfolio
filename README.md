@@ -1,7 +1,7 @@
 # Beepered's Portfolio
 
 That's right! It's my portfolio. For porting with a little folio.
-A Vite + Vue 3 project.  
+A Vite + Vue 3 + Phaser3 project.  
 Clicky clicky. AAAAAAHHHHH!!!  
 https://beepered.github.io/Portfolio/
 

@@ -6,6 +6,7 @@ import { PlayGround } from "./scenes/Playground";
 
 const config = {
   type: Phaser.AUTO,
+  pixelArt: true,
   width: 650,
   height: 110,
   parent: "game-container",
