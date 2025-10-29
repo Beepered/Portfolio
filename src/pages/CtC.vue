@@ -20,7 +20,7 @@
                 buildings to steal items and sell them to buy upgrades. I work on system design, 2D art, trailers, and
                 team management.</p>
         </div>
-        <img :src="img1Src" alt="CtC 1" class="cursor-toilet" @click="toggleImg1"
+        <img :src="img1Src" alt="CtC 1" class="cursor-toilet" @click="toggleImg1(); PlaySound()"
             style="float: left; margin-left: 0.75em">
         <div class="block" style="width: 40%;">
             <h3>Quarter 1: Scaffolding</h3>
@@ -30,7 +30,7 @@
                 began designing a central level, which helped us see how our ideas working in a plausible level.
             </p>
         </div>
-        <img :src="img2Src" alt="CtC 2" class="cursor-toilet" @click="toggleImg2"
+        <img :src="img2Src" alt="CtC 2" class="cursor-toilet" @click="toggleImg2(); PlaySound()"
             style="float: right; margin-right: 0.75em">
 
         <div class="block" style="width: 40%;">
@@ -42,7 +42,7 @@
                 days, offered help, and cleaned up code.
             </p>
         </div>
-        <img :src="img3Src" alt="CtC 3" class="cursor-toilet" @click="toggleImg3"
+        <img :src="img3Src" alt="CtC 3" class="cursor-toilet" @click="toggleImg3(); PlaySound()"
             style="float: left; margin-left: 0.75em">
         <div class="block" style="width: 40%;">
             <h3>Current: Limbo</h3>
@@ -61,6 +61,8 @@
 </template>
 
 <script>
+import sound from '@assets/sfx/ctc_click.wav'
+
 export default {
     data() {
         return {
@@ -71,10 +73,10 @@ export default {
     },
     computed: {
         img1Src() {
-            return this.img1Active ? new URL('@assets/img/ctc/ctc4.png', import.meta.url).href : new URL('@assets/img/ctc/ctc1.png', import.meta.url).href
+            return this.img1Active ? new URL('@assets/img/ctc/ctc1.png', import.meta.url).href : new URL('@assets/img/ctc/ctc2.png', import.meta.url).href
         },
         img2Src() {
-            return this.img2Active ? new URL('@assets/img/ctc/ctc5.png', import.meta.url).href : new URL('@assets/img/ctc/ctc2.png', import.meta.url).href;
+            return this.img2Active ? new URL('@assets/img/ctc/ctc5.png', import.meta.url).href : new URL('@assets/img/ctc/ctc4.png', import.meta.url).href;
         },
         img3Src() {
             return this.img3Active ? new URL('@assets/img/ctc/ctc6.png', import.meta.url).href : new URL('@assets/img/ctc/ctc3.png', import.meta.url).href;
@@ -89,6 +91,11 @@ export default {
         },
         toggleImg3() {
             this.img3Active = !this.img3Active;
+        },
+
+        PlaySound() {
+            var audio = new Audio(sound)
+            audio.play();
         }
     }
 }
@@ -96,10 +103,6 @@ export default {
 
 
 <style scoped>
-.top {
-    background-image: "@assets/img/me.jpg";
-}
-
 .block {
     margin: auto;
     margin-bottom: 1em;
