@@ -1,13 +1,13 @@
-export class Dummy extends Phaser.Physics.Arcade.Sprite {
-  static soundNames = ["Dummy1.wav", "Dummy2.wav", "Dummy3.wav", "Dummy4.wav"];
+export class Skull extends Phaser.Physics.Arcade.Sprite {
+  static soundNames = ["Skull1.wav", "Skull2.wav", "Skull3.wav", "Skull4.wav"];
 
   constructor(scene, x, y, gameSize) {
-    super(scene, x, y, "Dummy");
-    scene.add.existing(this);
-    this.texture = "Dummy";
+    super(scene, x, y, "Skull");
+    this.scene.add.existing(this);
+    this.texture = "Skull";
 
     this.gameSize = gameSize;
-    this.moveSpeed = 0.1;
+    this.moveSpeed = 0.05;
     this.setInteractive({ useHandCursor: true });
 
     this.sounds = [];
@@ -18,15 +18,15 @@ export class Dummy extends Phaser.Physics.Arcade.Sprite {
       frames: this.anims.generateFrameNumbers(this.texture, {
         frameRate: 8,
         start: 0,
-        end: 2,
+        end: 7,
       }),
     });
     this.anims.create({
       key: "walk",
       frames: this.anims.generateFrameNumbers(this.texture, {
         frameRate: 8,
-        start: 3,
-        end: 5,
+        start: 8,
+        end: 15,
       }),
     });
 
@@ -36,9 +36,9 @@ export class Dummy extends Phaser.Physics.Arcade.Sprite {
     };
     this.state = this.States.IDLE;
 
-    this.idleMin = 1;
-    this.idleMax = 3;
-    this.walkMin = 1;
+    this.idleMin = 2;
+    this.idleMax = 4;
+    this.walkMin = 1.5;
     this.walkMax = 3.5;
     this.time = Phaser.Math.Between(this.idleMin, this.idleMax);
 
@@ -50,7 +50,7 @@ export class Dummy extends Phaser.Physics.Arcade.Sprite {
 
   AddSounds(scene) {
     this.sounds = [];
-    for (let i = 0; i < Dummy.soundNames.length; i++) {
+    for (let i = 0; i < Skull.soundNames.length; i++) {
       this.sounds.push(
         scene.sound.add(this.texture + i, {
           volume: 0.6,

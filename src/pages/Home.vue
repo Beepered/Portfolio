@@ -67,7 +67,7 @@
                 </div>
                 <div style="width: 90%">
                     <p>System Design</p>
-                    <progress-bar :progress="50" style="width: 80%; margin: auto;"></progress-bar>
+                    <progress-bar :progress="55" style="width: 80%; margin: auto;"></progress-bar>
                 </div>
                 <div style="width: 90%">
                     <p>Hunger</p>

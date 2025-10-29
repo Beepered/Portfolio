@@ -17,6 +17,9 @@ const routes = [
     path: "/CtC",
     name: "CtC",
     component: CtC,
+    meta: {
+      backgroundColor: "#1f1f1fff",
+    },
   },
   {
     path: "/Fight",
@@ -33,7 +36,7 @@ const routes = [
     name: "Funny",
     component: Funny,
     meta: {
-      backgroundColor: "##292929",
+      backgroundColor: "#a8a8a8ff",
     },
   },
   {
