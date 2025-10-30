@@ -32,13 +32,13 @@
                 </p>
             </div>
 
-            <div>
+            <div v-if="img1Show" v-bind:style="{ transform: `rotate(${img1Deg}deg)` }" @click="Image1Click()">
                 <img class="fit-image" src="@assets/img/fight1.png">
             </div>
         </div>
 
         <div class="container">
-            <div>
+            <div v-if="img2Show" v-bind:style="{ transform: `rotate(${img2Deg}deg)` }" @click="Image2Click()">
                 <img class="fit-image" src="@assets/img/fight2.png">
             </div>
 
@@ -61,6 +61,74 @@
         </div>
     </section>
 </template>
+
+<script>
+import sound from '@assets/sfx/fight_click.wav'
+
+const MIN_ROT = -9;
+const MAX_ROT = 9;
+
+export default {
+
+    data() {
+        return {
+            img1Show: true,
+            img1Clicks: 0,
+            img1Deg: 0,
+
+            img2Show: true,
+            img2Clicks: 0,
+            img2Deg: 0,
+        }
+    },
+    methods: {
+        Image1Click() {
+            this.img1Clicks++
+            if (this.img1Deg > 0) {
+                let MAX_ROT = 0;
+                this.img1Deg = Math.floor(Math.random() * (MAX_ROT - MIN_ROT + 1)) + MIN_ROT;
+            }
+            else if (this.img1Deg < 0) {
+                let MIN_ROT = 0;
+                this.img1Deg = Math.floor(Math.random() * (MAX_ROT - MIN_ROT + 1)) + MIN_ROT;
+            }
+            else {
+                this.img1Deg = Math.floor(Math.random() * (MAX_ROT - MIN_ROT + 1)) + MIN_ROT;
+            }
+
+            this.PlaySound();
+
+            if (this.img1Clicks >= 5) {
+                this.img1Show = false;
+            }
+        },
+        Image2Click() {
+            this.img2Clicks++
+            if (this.img2Deg > 0) {
+                let MAX_ROT = 0;
+                this.img2Deg = Math.floor(Math.random() * (MAX_ROT - MIN_ROT + 1)) + MIN_ROT;
+            }
+            else if (this.img2Deg < 0) {
+                let MIN_ROT = 0;
+                this.img2Deg = Math.floor(Math.random() * (MAX_ROT - MIN_ROT + 1)) + MIN_ROT;
+            }
+            else {
+                this.img2Deg = Math.floor(Math.random() * (MAX_ROT - MIN_ROT + 1)) + MIN_ROT;
+            }
+            this.PlaySound();
+
+            if (this.img2Clicks >= 5) {
+                this.img2Show = false;
+            }
+        },
+        PlaySound() {
+            var audio = new Audio(sound)
+            audio.play();
+        }
+    }
+}
+</script>
+
 
 <style scoped>
 .head {
