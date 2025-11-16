@@ -10,7 +10,8 @@
         <div style="background-color: #f4f4f4; margin: 0;">
             <div class="block">
                 <div class="col" style="width: 40%">
-                    <img :src="current_image" style="height:20em; border-radius: 20%;" @click="ClickMe()">
+                    <img loading="lazy" :src="current_image" style="height:20em; border-radius: 20%;"
+                        alt="Picture of me :)" @click="ClickMe()">
                 </div>
                 <div class="col" style="align-content: center;">
                     <p>My name is Brendan Trieu. I graduated UC: Santa Cruz with a
@@ -24,11 +25,6 @@
                         Though I have a degree in game design, programming interests me as a whole,
                         and I would like to learn more and experience software development as a whole.
                     </p>
-                    <!-- <div style="margin-top: 2em;">
-                        <p><b>Blood type:</b> H</p>
-                        <p><b>Height:</b> 72cm (5.9 ft)</p>
-                        <p><b>Favorite Food:</b> Chitin, Caramel, Noodles</p>
-                    </div> -->
                     <div style="margin-top: 2.5em;">
                         <a href="https://docs.google.com/document/d/1Y3NPLMJ7Zu68bm68akAthKcHAYK8E-DX4vM7Souc_6o/edit?tab=t.0#heading=h.e8nqy5ycl96p"
                             target="_blank" class="resume-btn">Resume</a>
@@ -116,12 +112,18 @@
 <script>
 import QuoteGenerator from '@components/QuoteGenerator.vue';
 import ProgressBar from '@components/ProgressBar.vue'
-import me from '@assets/img/me.jpg';
-import me1 from '@assets/img/me1.jpg';
-import me2 from '@assets/img/me2.jpg';
-import me3 from '@assets/img/me3.jpg';
-import me4 from '@assets/img/me4.jpg';
-import me5 from '@assets/img/me5.jpg';
+
+import me from '@assets/img/home/me.jpg';
+import me1 from '@assets/img/home/me1.jpg';
+import me2 from '@assets/img/home/me2.jpg';
+import me3 from '@assets/img/home/me3.jpg';
+import me4 from '@assets/img/home/me4.jpg';
+import me5 from '@assets/img/home/me5.jpg';
+
+import me_sound from '@assets/sfx/home/me_sound.mp3'
+import me_sound1 from '@assets/sfx/home/me_sound1.mp3'
+import me_sound2 from '@assets/sfx/home/me_sound2.mp3'
+import me_sound3 from '@assets/sfx/home/me_sound3.mp3'
 
 const default_image = me;
 
@@ -140,6 +142,9 @@ export default {
             me_images: [
                 me1, me2, me3, me4, me5
             ],
+            possible_sounds: [
+                me_sound, me_sound1, me_sound2, me_sound3
+            ],
             current_image: me,
         }
     },
@@ -156,28 +161,26 @@ export default {
             }, intervalTime);
         },
         PlaySound(ref) {
-
-        },
-        GetRandomImage() {
-            const rand = Math.floor(Math.random() * this.me_images.length);
-            return this.me_images[rand];
-        },
-        ClickMe() {
-            this.clicks++;
-            if (this.clicks >= 10) {
-                this.clicks = 0;
-                this.current_image = this.GetRandomImage();
-                this.PlaySound();
-                setTimeout(() => {
-                    this.current_image = default_image;
-                }, 500);
-            }
+            var audio = new Audio(ref)
+            audio.play();
         },
         RandomInt(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
+        },
+        ClickMe() {
+            this.clicks++;
+            if (this.clicks >= 5) {
+                this.clicks = 0;
+                this.current_image = this.me_images[this.RandomInt(0, this.me_images.length - 1)];
+                this.PlaySound(this.possible_sounds[this.RandomInt(0, this.possible_sounds.length - 1)]);
+                setTimeout(() => {
+                    this.current_image = default_image;
+                }, 750);
+            }
+        },
+
     },
     beforeMount() {
         this.MovePixel();

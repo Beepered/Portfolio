@@ -1,18 +1,14 @@
-export class Yeller extends Phaser.Physics.Arcade.Sprite {
-  static soundNames = [
-    "Yeller1.wav",
-    "Yeller2.wav",
-    "Yeller3.wav",
-    "Yeller4.wav",
-  ];
+export class Balloon extends Phaser.Physics.Arcade.Sprite {
+  static soundNames = ["Balloon1.mp3"];
 
   constructor(scene, x, y, gameSize) {
-    super(scene, x, y, "Yeller");
+    super(scene, x, y, "Balloon");
     scene.add.existing(this);
-    this.texture = "Yeller";
+    this.texture = "Balloon";
+    this.tint = Phaser.Display.Color.RandomRGB().color; // set to random color
 
     this.gameSize = gameSize;
-    this.moveSpeed = 0.16;
+    this.moveSpeed = 0.05;
     this.setInteractive({ useHandCursor: true });
 
     this.sounds = [];
@@ -21,7 +17,7 @@ export class Yeller extends Phaser.Physics.Arcade.Sprite {
     this.anims.create({
       key: "idle",
       frames: this.anims.generateFrameNumbers(this.texture, {
-        frameRate: 8,
+        frameRate: 6,
         start: 0,
         end: 3,
       }),
@@ -29,22 +25,39 @@ export class Yeller extends Phaser.Physics.Arcade.Sprite {
     this.anims.create({
       key: "walk",
       frames: this.anims.generateFrameNumbers(this.texture, {
-        frameRate: 8,
+        frameRate: 6,
         start: 4,
         end: 7,
+      }),
+    });
+    this.anims.create({
+      key: "pop",
+      frames: this.anims.generateFrameNumbers(this.texture, {
+        frameRate: 6,
+        start: 8,
+        end: 10,
+      }),
+    });
+    this.anims.create({
+      key: "popped",
+      frames: this.anims.generateFrameNumbers(this.texture, {
+        frameRate: 6,
+        start: 11,
+        end: 11,
       }),
     });
 
     this.States = {
       IDLE: "idle",
       WALK: "walk",
+      POP: "pop",
     };
     this.state = this.States.IDLE;
 
-    this.idleMin = 1;
-    this.idleMax = 2.5;
+    this.idleMin = 2;
+    this.idleMax = 3.5;
     this.walkMin = 1;
-    this.walkMax = 3;
+    this.walkMax = 2.5;
     this.time = Phaser.Math.Between(this.idleMin, this.idleMax);
 
     this.walkX = 0;
@@ -55,7 +68,7 @@ export class Yeller extends Phaser.Physics.Arcade.Sprite {
 
   AddSounds(scene) {
     this.sounds = [];
-    for (let i = 0; i < Yeller.soundNames.length; i++) {
+    for (let i = 0; i < Balloon.soundNames.length; i++) {
       this.sounds.push(
         scene.sound.add(this.texture + i, {
           volume: 0.6,
@@ -65,10 +78,19 @@ export class Yeller extends Phaser.Physics.Arcade.Sprite {
   }
 
   OnClick() {
+    if (this.state == this.States.POP) return;
+
+    this.state = this.States.POP;
     this.sounds[Phaser.Math.Between(0, this.sounds.length - 1)].play();
+    this.play("pop", true);
+    this.on("animationcomplete", () => {
+      this.play("popped", true);
+    });
   }
 
   update(time, delta) {
+    if (this.state == this.States.POP) return;
+
     this.time -= 0.001 * delta;
     if (this.state == this.States.IDLE) {
       this.Idle();

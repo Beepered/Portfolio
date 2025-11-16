@@ -69,7 +69,6 @@ const MIN_ROT = -9;
 const MAX_ROT = 9;
 
 export default {
-
     data() {
         return {
             img1Show: true,

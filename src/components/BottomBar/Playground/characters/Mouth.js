@@ -1,18 +1,13 @@
-export class Yeller extends Phaser.Physics.Arcade.Sprite {
-  static soundNames = [
-    "Yeller1.wav",
-    "Yeller2.wav",
-    "Yeller3.wav",
-    "Yeller4.wav",
-  ];
+export class Mouth extends Phaser.Physics.Arcade.Sprite {
+  static soundNames = ["Mouth1.wav", "Mouth2.wav", "Mouth3.wav", "Mouth4.wav"];
 
   constructor(scene, x, y, gameSize) {
-    super(scene, x, y, "Yeller");
+    super(scene, x, y, "Mouth");
     scene.add.existing(this);
-    this.texture = "Yeller";
+    this.texture = "Mouth";
 
     this.gameSize = gameSize;
-    this.moveSpeed = 0.16;
+    this.moveSpeed = 0.08;
     this.setInteractive({ useHandCursor: true });
 
     this.sounds = [];
@@ -21,17 +16,17 @@ export class Yeller extends Phaser.Physics.Arcade.Sprite {
     this.anims.create({
       key: "idle",
       frames: this.anims.generateFrameNumbers(this.texture, {
-        frameRate: 8,
+        frameRate: 3,
         start: 0,
-        end: 3,
+        end: 2,
       }),
     });
     this.anims.create({
       key: "walk",
       frames: this.anims.generateFrameNumbers(this.texture, {
-        frameRate: 8,
-        start: 4,
-        end: 7,
+        frameRate: 3,
+        start: 3,
+        end: 8,
       }),
     });
 
@@ -41,10 +36,10 @@ export class Yeller extends Phaser.Physics.Arcade.Sprite {
     };
     this.state = this.States.IDLE;
 
-    this.idleMin = 1;
-    this.idleMax = 2.5;
+    this.idleMin = 2;
+    this.idleMax = 4;
     this.walkMin = 1;
-    this.walkMax = 3;
+    this.walkMax = 2.5;
     this.time = Phaser.Math.Between(this.idleMin, this.idleMax);
 
     this.walkX = 0;
@@ -55,7 +50,7 @@ export class Yeller extends Phaser.Physics.Arcade.Sprite {
 
   AddSounds(scene) {
     this.sounds = [];
-    for (let i = 0; i < Yeller.soundNames.length; i++) {
+    for (let i = 0; i < Mouth.soundNames.length; i++) {
       this.sounds.push(
         scene.sound.add(this.texture + i, {
           volume: 0.6,

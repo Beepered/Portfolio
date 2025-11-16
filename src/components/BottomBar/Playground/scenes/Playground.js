@@ -2,15 +2,18 @@ import { EventBus } from "../EventBus";
 import { Scene } from "phaser";
 
 // characters
-// (texture and import must all be the same)
+// (texture and import must be the same)
 import { Dummy } from "@characters/Dummy.js";
 import { Yeller } from "@characters/Yeller.js";
 import { Skull } from "@characters/Skull.js";
+import { Stickman } from "@characters/Stickman";
+import { Mouth } from "@characters/Mouth";
+import { Balloon } from "@characters/Balloon";
 
-const NUM_CHAR = Phaser.Math.Between(3, 5);
+const NUM_CHAR = Phaser.Math.Between(4, 6);
 
-let possibleChar = [Dummy, Yeller, Skull];
-let charNames = ["Dummy", "Yeller", "Skull"];
+let possibleChar = [Dummy, Yeller, Skull, Stickman, Mouth, Balloon];
+let charNames = ["Dummy", "Yeller", "Skull", "Stickman", "Mouth", "Balloon"];
 let chosenCharNums = [];
 
 export class PlayGround extends Scene {

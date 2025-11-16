@@ -1,4 +1,8 @@
-import { createRouter, createMemoryHistory } from "vue-router";
+import {
+  createRouter,
+  createMemoryHistory,
+  createWebHistory,
+} from "vue-router";
 
 import Home from "@pages/Home.vue";
 import CtC from "@pages/CtC.vue";
@@ -6,6 +10,7 @@ import Fight from "@pages/Fight.vue";
 import OtherProjects from "@pages/Other-Projects.vue";
 import Funny from "@pages/Funny.vue";
 import Secret from "@pages/Secret.vue";
+import NotFound from "@pages/404.vue";
 
 const routes = [
   {
@@ -36,7 +41,7 @@ const routes = [
     name: "Funny",
     component: Funny,
     meta: {
-      backgroundColor: "#a8a8a8ff",
+      backgroundColor: "#edededff",
     },
   },
   {
@@ -47,10 +52,15 @@ const routes = [
       backgroundColor: "black",
     },
   },
+  {
+    path: "/:pathMatch(.*)",
+    name: "not-found",
+    component: NotFound,
+  },
 ];
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes,
 });
 

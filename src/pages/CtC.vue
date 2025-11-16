@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
     <section class="cursor-hand">
         <div class="top">
