@@ -10,7 +10,6 @@ import Fight from "@pages/Fight.vue";
 import OtherProjects from "@pages/Other-Projects.vue";
 import Funny from "@pages/Funny.vue";
 import Secret from "@pages/Secret.vue";
-import NotFound from "@pages/404.vue";
 
 const routes = [
   {
@@ -52,15 +51,10 @@ const routes = [
       backgroundColor: "black",
     },
   },
-  {
-    path: "/:pathMatch(.*)",
-    name: "not-found",
-    component: NotFound,
-  },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createMemoryHistory(),
   routes,
 });
 

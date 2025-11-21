@@ -5,9 +5,9 @@
 
         <img src="@assets/img/gun.jpg" alt="I'll kill you now" style="height: 15em; width: 60em">
 
-        <div style="padding: 2em">
-            <img src="@assets/img/fall1.jpg" alt="I've fallen" style="height: 10vw; padding-right: 5em;">
-            <img src="@assets/img/fall2.jpg" alt="I'll kill you now" style="height: 10vw;">
+        <div style="padding: 1em">
+            <img src="@assets/img/fall1.jpg" alt="I've fallen" style="height: 11vw; padding-right: 5em;">
+            <img src="@assets/img/fall2.jpg" alt="I'll kill you now" style="height: 11vw;">
         </div>
     </section>
 </template>
@@ -15,12 +15,7 @@
 <script>
 
 export default {
-    data() {
 
-    },
-    methods: {
-
-    }
 }
 </script>
 

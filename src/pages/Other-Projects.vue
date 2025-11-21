@@ -3,6 +3,22 @@
         <h1>Other Projects</h1>
         <div class="block">
             <div class="col left">
+                <a href="https://luminice-star.itch.io/jumpscare" target="_blank" style="">
+                    <img class="fit-image hover-effect" src="@assets/img/other_projects/foxy.jpg" alt="Jumpscare image"
+                        style="">
+                </a>
+            </div>
+            <div class=" col right">
+                <h2>Random Jumpscare</h2>
+                <p class="facts">Python, Tkinter</p>
+                <p>Funny program that has a 1/10000 chance of playing a jumpscare. It autostarts and you can change
+                    which jumpscares play and if you want the chance to increase slowly. Took a lot longer to finish
+                    than I thought.
+                </p>
+            </div>
+        </div>
+        <div class="block">
+            <div class="col left">
                 <a href="https://mosaicly.io/" target="_blank" style="">
                     <img class="fit-image hover-effect" src="@assets/img/other_projects/mosaicly.png"
                         alt="Mosaicly image" style="">
