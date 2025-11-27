@@ -1,3 +1,5 @@
+<!-- I'll do something more with this eventually -->
+
 <template>
     <section class="text-white">
         <h1 class="title">Secret Room</h1>

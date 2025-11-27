@@ -1,8 +1,12 @@
 <template>
     <section>
         <h1>Other Projects</h1>
+        <div class="side-image">
+            <img src="@assets/img/Unnamed.png">
+        </div>
+
         <div class="block">
-            <div class="col left">
+            <div class="col left" style="z-index: 1">
                 <a href="https://luminice-star.itch.io/jumpscare" target="_blank" style="">
                     <img class="fit-image hover-effect" src="@assets/img/other_projects/foxy.jpg" alt="Jumpscare image"
                         style="">
@@ -18,7 +22,7 @@
             </div>
         </div>
         <div class="block">
-            <div class="col left">
+            <div class="col left" style="z-index: 1">
                 <a href="https://mosaicly.io/" target="_blank" style="">
                     <img class="fit-image hover-effect" src="@assets/img/other_projects/mosaicly.png"
                         alt="Mosaicly image" style="">
@@ -33,7 +37,7 @@
             </div>
         </div>
         <div class="block">
-            <div class="col left">
+            <div class="col left" style="z-index: 1">
                 <a href="https://luminice-star.itch.io/wypb-special" target="_blank">
                     <img class="fit-image hover-effect" src="@assets/img/other_projects/wypb.png"
                         alt="Would you press the button image">
@@ -49,7 +53,7 @@
             </div>
         </div>
         <div class="block">
-            <div class="col left">
+            <div class="col left" style="z-index: 1">
                 <a href="https://luminice-star.itch.io/mobile-smash-idea" target="_blank">
                     <img class="fit-image hover-effect" src="@assets/img/other_projects/mobile_smash.png"
                         alt="Mobile Smash image">
@@ -64,7 +68,7 @@
             </div>
         </div>
         <div class="block">
-            <div class="col left">
+            <div class="col left" style="z-index: 1">
                 <a href="https://connor-lynchh.github.io/CMPM-169-Team-Project-Group-8/" target="_blank">
                     <img class="fit-image hover-effect" src="@assets/img/other_projects/eerie_watch.png"
                         alt="Eerie Watch image">
@@ -80,7 +84,19 @@
                 </p>
             </div>
         </div>
-
+        <transition name="slowFade" v-show="secret">
+            <div class="block" style="background-color: #e0e0e0;">
+                <div class="col left">
+                    <router-link to="/Secret" class="secret"><b>Secret Found</b></router-link>
+                </div>
+                <div class="col right">
+                    <h2>Something Secret</h2>
+                    <p class="facts">Mystery</p>
+                    <p>Who knows where this leads?
+                    </p>
+                </div>
+            </div>
+        </transition>
     </section>
 </template>
 
@@ -88,12 +104,9 @@
 export default {
     data() {
         return {
-
+            secret: false, // yes I am hiding a page inside code. Not sure how anyone will figure this out
         }
     },
-    methods: {
-
-    }
 }
 </script>
 
@@ -134,6 +147,18 @@ export default {
     /* for the programming languages part" */
     color: rgb(110, 110, 110);
     line-height: 10px;
+}
+
+.side-image {
+    position: fixed;
+    top: 10%;
+    left: 0%;
+    z-index: 0;
+}
+
+.secret {
+    color: rgb(73, 200, 141);
+    font-size: 3em;
 }
 
 .hover-effect {

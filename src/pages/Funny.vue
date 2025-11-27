@@ -22,10 +22,6 @@
             <transition name="fadeText">
                 <p class="result" v-show="result" :key="count">Dead</p>
             </transition>
-
-            <transition name="slowFade">
-                <router-link to="/Secret" class="secret" v-show="secret">Secret Found</router-link>
-            </transition>
         </div>
 
         <div class="img" style="margin-top: 3em;">
@@ -50,7 +46,6 @@ export default {
             count: 0, // pathetic way to get text to keep using transition
             result: false,
             error: false,
-            secret: false,
         }
     },
     methods: {
@@ -58,10 +53,7 @@ export default {
             if (this.name && this.date) {
                 this.result = true;
                 this.error = false;
-                this.count++;
-                if (this.name.toLowerCase() == "cheater") {
-                    this.secret = true;
-                }
+                this.count++; // no I will not check if it overflows
             }
             else {
                 this.error = true;
@@ -103,11 +95,6 @@ input {
 
 .result {
     color: rgb(65, 18, 110);
-    font-size: 1.5em;
-}
-
-.secret {
-    color: rgb(73, 200, 141);
     font-size: 1.5em;
 }
 

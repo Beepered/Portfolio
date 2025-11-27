@@ -12,7 +12,7 @@
             <h3><a href="https://store.steampowered.com/app/3704870/Cash_the_Cache/" class="cursor-toilet">Steam
                     Link</a></h3>
 
-            <p>I am working as the producer for my college capstone final project. You play as a robber, breaking into
+            <p>I am the producer for my college Capstone project. You play as a robber, breaking into
                 buildings to steal items and sell them to buy upgrades. I work on system design, 2D art, trailers, and
                 team management.</p>
         </div>
@@ -49,9 +49,9 @@
                 project
                 has tested my leadership skills, programming, and time management. Great experience!
             </p>
-            <p>We are stuck on a big level generation bug, but no one has time to fix it. Hopefully the game gets
+            <p>Fix a big room generation code. Now we can work on finishing up the game. Hopefully the game gets
                 released
-                at some point.</p>
+                soon.</p>
         </div>
     </section>
 </template>
