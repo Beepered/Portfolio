@@ -42,14 +42,11 @@
             style="float: left; margin-left: 0.75em">
         <div class="block" style="width: 40%;">
             <h3>Current: Limbo</h3>
-            <p>Most of the team has
-                left or gotten jobs. I enjoyed working on this while the group was still together, but it was been hard
-                getting
-                time to work on it and encouraging the group while we still had other classes to worry about. This
+            <p>Most of the team left or gotten jobs. I enjoyed working on this while the group was still together. This
                 project
                 has tested my leadership skills, programming, and time management. Great experience!
             </p>
-            <p>Fix a big room generation code. Now we can work on finishing up the game. Hopefully the game gets
+            <p>Fixed a big room generation code. Now we can work on finishing up the game. Hopefully it gets
                 released
                 soon.</p>
         </div>

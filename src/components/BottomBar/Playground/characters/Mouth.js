@@ -104,7 +104,7 @@ export class Mouth extends Phaser.Physics.Arcade.Sprite {
       this.walkY *= -1;
     }
 
-    // walk animation
+    // switch to idle animation
     if (this.time <= 0) {
       this.state = this.States.IDLE;
       this.time = Phaser.Math.Between(this.idleMin, this.idleMax);

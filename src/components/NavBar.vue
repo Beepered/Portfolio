@@ -4,24 +4,8 @@
     <router-link class="route" :to="{ name: 'CtC' }">Cash the Cache</router-link>
     <router-link class="route" :to="{ name: 'Fight' }">Fight Game</router-link>
     <router-link class="route" :to="{ name: 'OtherProjects' }">Other Projects</router-link>
-    <!--
-    
-    <div class="dropdown">
-      <button class="dropbtn">Portfolio</button>
-      
-      <div class="dropdown-content">
-        <router-link :to="{ name: 'CtC' }">Cash the Cache</router-link>
-        <router-link :to="{ name: 'Fight' }">Fight Game</router-link>
-      </div>
-    </div>
-    -->
   </div>
 </template>
-
-<script>
-export default {};
-</script>
-
 
 <style>
 /* nav */
@@ -31,6 +15,7 @@ export default {};
   padding-bottom: 0.5em;
   left: 0;
   right: 0;
+  width: 100%;
 }
 
 #nav a {
@@ -53,51 +38,5 @@ export default {};
 
 .route {
   margin: 1em;
-}
-
-/**** drop down ****/
-.dropbtn {
-  background-color: rgb(210, 210, 210);
-  color: #273d53;
-  padding: 0.5em;
-  font-size: 1.5em;
-  font-weight: bold;
-  border: none;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 175px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 4px;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 8px 8px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  font-size: 0.9em;
-}
-
-.dropdown:hover .dropbtn {
-  /* hover over dropdown menu button */
-  background-color: #9d9d9d;
 }
 </style>

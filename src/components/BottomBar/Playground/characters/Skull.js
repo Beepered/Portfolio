@@ -54,7 +54,7 @@ export class Skull extends Phaser.Physics.Arcade.Sprite {
       this.sounds.push(
         scene.sound.add(this.texture + i, {
           volume: 0.6,
-        })
+        }),
       );
     }
   }
@@ -104,7 +104,7 @@ export class Skull extends Phaser.Physics.Arcade.Sprite {
       this.walkY *= -1;
     }
 
-    // walk animation
+    // switch to idle animation
     if (this.time <= 0) {
       this.state = this.States.IDLE;
       this.time = Phaser.Math.Between(this.idleMin, this.idleMax);

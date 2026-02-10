@@ -2,18 +2,41 @@ import { EventBus } from "../EventBus";
 import { Scene } from "phaser";
 
 // characters
-// (texture and import must be the same)
+// texture and import must be the same
 import { Dummy } from "@characters/Dummy.js";
 import { Yeller } from "@characters/Yeller.js";
 import { Skull } from "@characters/Skull.js";
 import { Stickman } from "@characters/Stickman";
 import { Mouth } from "@characters/Mouth";
 import { Balloon } from "@characters/Balloon";
+import { Ball } from "@characters/Ball";
+import { Me } from "@characters/Me";
+import { Chef } from "@characters/Chef";
 
 const NUM_CHAR = Phaser.Math.Between(4, 6);
 
-let possibleChar = [Dummy, Yeller, Skull, Stickman, Mouth, Balloon];
-let charNames = ["Dummy", "Yeller", "Skull", "Stickman", "Mouth", "Balloon"];
+let possibleChar = [
+  Dummy,
+  Yeller,
+  Skull,
+  Stickman,
+  Mouth,
+  Balloon,
+  Ball,
+  Me,
+  Chef,
+];
+let charNames = [
+  "Dummy",
+  "Yeller",
+  "Skull",
+  "Stickman",
+  "Mouth",
+  "Balloon",
+  "Ball",
+  "Me",
+  "Chef",
+];
 let chosenCharNums = [];
 
 export class PlayGround extends Scene {
@@ -36,7 +59,7 @@ export class PlayGround extends Scene {
       for (let i = 0; i < possibleChar[charNum].soundNames.length; i++) {
         this.load.audio(
           char + i,
-          "assets/sounds/" + char + "/" + possibleChar[charNum].soundNames[i]
+          "assets/sounds/" + char + "/" + possibleChar[charNum].soundNames[i],
         );
       }
 
@@ -52,7 +75,7 @@ export class PlayGround extends Scene {
         this,
         Phaser.Math.Between(35, this.sys.game.canvas.width - 35),
         Phaser.Math.Between(20, this.sys.game.canvas.height - 20),
-        this.sys.game.canvas
+        this.sys.game.canvas,
       );
       this.group.push(character);
     }

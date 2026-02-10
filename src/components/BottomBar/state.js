@@ -1,6 +1,6 @@
 import { ref, computed } from "vue";
 
-export const collapsed = ref(true);
+export const collapsed = ref(false);
 export const ToggleBar = () => {
   collapsed.value = !collapsed.value;
 };

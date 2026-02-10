@@ -1,14 +1,11 @@
-import {
-  createRouter,
-  createMemoryHistory,
-  createWebHistory,
-} from "vue-router";
+import { createRouter, createMemoryHistory } from "vue-router";
 
 import Home from "@pages/Home.vue";
 import CtC from "@pages/CtC.vue";
 import Fight from "@pages/Fight.vue";
 import OtherProjects from "@pages/Other-Projects.vue";
 import Funny from "@pages/Funny.vue";
+import Month from "@pages/Month.vue";
 import Secret from "@pages/Secret.vue";
 
 const routes = [
@@ -34,6 +31,11 @@ const routes = [
     path: "/OtherProjects",
     name: "OtherProjects",
     component: OtherProjects,
+  },
+  {
+    path: "/Month",
+    name: "Month",
+    component: Month,
   },
   {
     path: "/Funny",

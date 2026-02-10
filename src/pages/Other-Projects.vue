@@ -1,10 +1,23 @@
 <template>
     <section>
-        <h1>Other Projects</h1>
+        <h1>
+            <span class="reveal" @click="RevealSecret">O</span>ther Projects
+        </h1>
         <div class="side-image">
-            <img src="@assets/img/Unnamed.png">
+            <img src="@assets/img/Unnamed.png" style="opacity: 0.9;">
         </div>
 
+        <div class="block">
+            <div class="col left" style="z-index: 1">
+                <router-link class="route" to="/Month">ROUTE</router-link>
+            </div>
+            <div class=" col right">
+                <h2>Month of Code</h2>
+                <p class="facts">SQL, Full-Stack, Unreal Engine, XXX</p>
+                <p>1 week learning 1 thing
+                </p>
+            </div>
+        </div>
         <div class="block">
             <div class="col left" style="z-index: 1">
                 <a href="https://luminice-star.itch.io/jumpscare" target="_blank" style="">
@@ -23,7 +36,7 @@
         </div>
         <div class="block">
             <div class="col left" style="z-index: 1">
-                <a href="https://mosaicly.io/" target="_blank" style="">
+                <a href="https://mosaicly-seven.vercel.app/" target="_blank" style="">
                     <img class="fit-image hover-effect" src="@assets/img/other_projects/mosaicly.png"
                         alt="Mosaicly image" style="">
                 </a>
@@ -86,12 +99,12 @@
         </div>
         <transition name="slowFade" v-show="secret">
             <div class="block" style="background-color: #e0e0e0;">
-                <div class="col left">
-                    <router-link to="/Secret" class="secret"><b>Secret Found</b></router-link>
+                <div class="col left hover-effect">
+                    <router-link to="/Secret" class="secret"><b>Secret</b></router-link>
                 </div>
                 <div class="col right">
-                    <h2>Something Secret</h2>
-                    <p class="facts">Mystery</p>
+                    <h2>Secret Found</h2>
+                    <p class="facts">???</p>
                     <p>Who knows where this leads?
                     </p>
                 </div>
@@ -101,12 +114,24 @@
 </template>
 
 <script>
+import sound from '@assets/sfx/jingle.mp3'
+
 export default {
     data() {
         return {
-            secret: false, // yes I am hiding a page inside code. Not sure how anyone will figure this out
+            secret: false,
         }
     },
+    methods: {
+        RevealSecret() {
+            this.secret = true;
+            this.PlaySound();
+        },
+        PlaySound() {
+            var audio = new Audio(sound)
+            audio.play();
+        }
+    }
 }
 </script>
 
@@ -156,9 +181,15 @@ export default {
     z-index: 0;
 }
 
+.reveal {
+    cursor: pointer;
+}
+
 .secret {
-    color: rgb(73, 200, 141);
-    font-size: 3em;
+    background: linear-gradient(rgb(77, 212, 149), rgb(45, 122, 86));
+    color: transparent;
+    background-clip: text;
+    font-size: 5em;
 }
 
 .hover-effect {

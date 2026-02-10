@@ -101,9 +101,7 @@
                 <a href="mailto:bktrieu@gmail.com" target="_blank" style="float: left;">Email<img
                         src="@assets/icons/email.png" class="icon" style="float: right;"></a>
             </div>
-
         </div>
-
 
         <div id="odd_pixel" @click="this.$router.push('/Funny')" :style="`margin-left: ${margin}%;`"></div>
     </section>
@@ -119,11 +117,6 @@ import me2 from '@assets/img/home/me2.jpg';
 import me3 from '@assets/img/home/me3.jpg';
 import me4 from '@assets/img/home/me4.jpg';
 import me5 from '@assets/img/home/me5.jpg';
-
-import me_sound from '@assets/sfx/home/me_sound.mp3'
-import me_sound1 from '@assets/sfx/home/me_sound1.mp3'
-import me_sound2 from '@assets/sfx/home/me_sound2.mp3'
-import me_sound3 from '@assets/sfx/home/me_sound3.mp3'
 
 const default_image = me;
 
@@ -141,9 +134,6 @@ export default {
             clicks: 0,
             me_images: [
                 me1, me2, me3, me4, me5
-            ],
-            possible_sounds: [
-                me_sound, me_sound1, me_sound2, me_sound3
             ],
             current_image: me,
         }
@@ -174,7 +164,6 @@ export default {
             if (this.clicks >= 5) {
                 this.clicks = 0;
                 this.current_image = this.me_images[this.RandomInt(0, this.me_images.length - 1)];
-                this.PlaySound(this.possible_sounds[this.RandomInt(0, this.possible_sounds.length - 1)]);
                 setTimeout(() => {
                     this.current_image = default_image;
                 }, 750);
@@ -184,7 +173,7 @@ export default {
     },
     beforeMount() {
         this.MovePixel();
-        this.hunger = this.RandomInt(30, 100)
+        this.hunger = this.RandomInt(35, 100)
     },
 }
 </script>
@@ -196,7 +185,7 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 12px;
-    width: 60vw;
+    width: 55vw;
     margin-top: 1em;
     bottom: 0;
     left: 0;

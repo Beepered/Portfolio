@@ -10,7 +10,6 @@
             </p>
 
             <h3><a href="https://luminice-star.itch.io/fight-game-plus-zero">Itch.io Link</a></h3>
-
         </div>
 
         <div class="container">
