@@ -6,18 +6,27 @@
         <div class="side-image" style="left: 0;">
             <img draggable="false" src="@assets/img/other_projects/background.png">
         </div>
-        <!--
-        Hides the text too much. Figure out later
-
-        <div class="side-image" style="right: 0; transform: scaleX(-1);">
-            <img draggable="false" src="@assets/img/other_projects/background2.png" style="opacity: 0.75;">
+        <div class="block">
+            <div class="col left">
+                <a href="https://black-mold-client.onrender.com/" target="_blank">
+                    <img draggable="false" class="fit-image hover-effect" src="@assets/img/other_projects/mold.png"
+                        alt="Black Mold image">
+                </a>
+            </div>
+            <div class="col right">
+                <h2>Black Mold Fullstack Website</h2>
+                <p class="facts">MongoDB, Express.js, React.js, Node.js</p>
+                <p>My first <b>REAL</b> full-stack website. It took longer than I though, mostly, because I didn't know
+                    what I wanted to do with it. I have a goal for this
+                    project, but it requires me to
+                    not tell anyone.</p>
+            </div>
         </div>
-        -->
         <div class="block">
             <div class="col left">
                 <router-link class="route" to="/Month">
                     <img draggable="false" class="fit-image hover-effect" src="@assets/img/other_projects/month.jpg"
-                        alt="Jumpscare image" style="">
+                        alt="Jumpscare image">
                 </router-link>
             </div>
             <div class="col right">
@@ -26,17 +35,18 @@
                 <p>1 week = 1 new thing</p>
             </div>
         </div>
+
         <div class="block">
             <div class="col left">
-                <a href="https://luminice-star.itch.io/jumpscare" target="_blank" style="">
+                <a href="https://luminice-star.itch.io/jumpscare" target="_blank">
                     <img draggable="false" class="fit-image hover-effect" src="@assets/img/other_projects/foxy.jpg"
-                        alt="Jumpscare image" style="">
+                        alt="Jumpscare image">
                 </a>
             </div>
             <div class="col right">
                 <h2>Random Jumpscare</h2>
                 <p class="facts">Python, Tkinter</p>
-                <p>Funny program that has a 1/10000 chance of playing a jumpscare. It autostarts and you can change
+                <p>Funny program with a 1/10000 chance of playing a jumpscare. It autostarts and you can change
                     which jumpscares play and if you want the chance to increase slowly. Took a lot longer to finish
                     than I thought.
                 </p>
@@ -44,15 +54,15 @@
         </div>
         <div class="block">
             <div class="col left">
-                <a href="https://mosaicly-seven.vercel.app/" target="_blank" style="">
+                <a href="https://mosaicly-seven.vercel.app/" target="_blank">
                     <img draggable="false" class="fit-image hover-effect" src="@assets/img/other_projects/mosaicly.png"
-                        alt="Mosaicly image" style="">
+                        alt="Mosaicly image">
                 </a>
             </div>
             <div class=" col right">
                 <h2>Mosaicly</h2>
                 <p class="facts">TypeScript, SCSS, Svelte</p>
-                <p>Scrum Master for a quarter long agile developed web app to create public interactable canvases
+                <p>Scrum Master for an Agile developed web app to create public interactable canvases
                     similar to Pokemon Go.
                 </p>
             </div>
@@ -67,9 +77,8 @@
             <div class="col right">
                 <h2>Would You Press the Button - Special</h2>
                 <p class="facts">Godot, GDScript</p>
-                <p>Director of a game about convincing others whether to press a button or not
-                    that
-                    can alter your life. Created out of the emotion of "tempt", the game was designed to "tempt someone
+                <p>Director for a game about convincing others whether to press a button or not. Created out of the
+                    emotion of "tempt", the game was designed to "tempt someone
                     into doing something".</p>
             </div>
         </div>

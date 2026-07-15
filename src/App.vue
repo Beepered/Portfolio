@@ -1,5 +1,7 @@
 <!-- "npm run deploy" to update/deploy github pages version -->
 
+<!-- https://www.youtube.com/watch?v=2wh4feX5LfU -->
+
 <script setup>
 import LoadingBar from '@components/LoadingBar.vue'
 import NavBar from '@components/NavBar.vue';
