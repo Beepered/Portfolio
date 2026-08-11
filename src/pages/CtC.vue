@@ -5,10 +5,10 @@
         </div>
 
         <div class="block" style="max-width: 75%; color: rgb(205, 173, 65); font-size: 1.2em;">
-            <h2>My College Capstone</h2>
-            <p>Break into houses. Steal stuff, sell, repeat. A free to play, 3D Unity game about burglarizing houses.
+            <h2>College Capstone</h2>
+            <p>Break into houses. Steal stuff, sell, repeat. A 3D, first-person Unity game about burglarizing houses.
             </p>
-            <p>Release Date: I'm not sure</p>
+            <p>Release Date: September hopefully</p>
             <h3><a href="https://store.steampowered.com/app/3704870/Cash_the_Cache/" class="cursor-toilet">Steam
                     Link</a></h3>
 
@@ -22,8 +22,8 @@
             <h3>Quarter 1: Scaffolding</h3>
             <p>I designed the interaction
                 system and UI, while my group worked on AI pathfinding, sounds, and assets.
-                We realized that we didn't have anything to show off so we
-                began designing a central level, which helped us see how our ideas working in a plausible level.
+                After the first playtest, we realized there was nothing concrete to show off so we
+                designed a single central level, which helped us see how our ideas working in a plausible design.
             </p>
         </div>
         <img :src="img2Src" alt="CtC 2" class="cursor-toilet" @click="toggleImg2(); PlaySound()"
@@ -32,23 +32,20 @@
         <div class="block" style="width: 40%;">
             <h3>Quarter 2: Level generation and level selection</h3>
             <p>I onboarded new members,
-                refactored nearly every game system, and focused on new levels. We switched from having a pre-designed
+                refactored nearly every game system, and focused on new levels. We switched from having a single pre-designed
                 level to making
-                randomly generated ones as it would help lengthen game time. I kept checking in with members every few
-                days, offered help, and cleaned up code.
+                randomly generated rooms that can be puzzle-pieced together. I took on a much more leadership role, as I constantly checked in with members and offered help.
             </p>
         </div>
         <img :src="img3Src" alt="CtC 3" class="cursor-toilet" @click="toggleImg3(); PlaySound()"
             style="float: left; margin-left: 0.75em">
         <div class="block" style="width: 40%;">
-            <h3>Current: Limbo</h3>
-            <p>Most of the team left or gotten jobs. I enjoyed working on this while the group was still together. This
+            <h3>Current: Cleanup and big code fixes</h3>
+            <p>I am finishing up a lot of busy-work like translations and image uploading and hope to release it by September. This
                 project
                 has tested my leadership skills, programming, and time management. Great experience!
             </p>
-            <p>Fixed a big room generation code. Now we can work on finishing up the game. Hopefully it gets
-                released
-                soon.</p>
+            <p>Fixed a big room generation code problem which prevented us from willingfully releasing the game.</p>
         </div>
     </section>
 </template>

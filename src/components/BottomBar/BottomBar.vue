@@ -40,7 +40,7 @@ export default {
 }
 
 .top {
-    width: 7%;
+    width: 8%;
     height: 2.5em;
     background-color: #ececec;
     border-top-style: solid;

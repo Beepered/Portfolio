@@ -11,8 +11,8 @@
 /* nav */
 #nav {
   background-color: #e7e7e7;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
   left: 0;
   right: 0;
   width: 100%;

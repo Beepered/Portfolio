@@ -1,10 +1,33 @@
 <template>
     <section>
-        <div class="padd" style="padding-top: 0.75em">
+        <div class="margins" style="padding-top: 0.75em">
             <h1>Brendan Trieu</h1>
             <p style="font-size: 1.3em;">Hey-o! This is Brendan Trieu's portfolio, a place where I delve further into my
                 projects the process and
                 a bunch of other random stuff.</p>
+        </div>
+
+        <div class="link-holder">
+            <div class="social_link">
+                <a href="https://www.linkedin.com/in/brendan-trieu-882753266/" target="_blank"
+                    style="float: left;">Linkedin<img src="@assets/icons/linkedin.png" class="icon"
+                        style="float: right;"></a>
+            </div>
+
+            <div class="social_link">
+                <a href="https://luminice-star.itch.io/" target="_blank" style="float: left;">itch.io<img
+                        src="@assets/icons/itch.png" class="icon" style="float: right;"></a>
+            </div>
+
+            <div class="social_link">
+                <a href="https://github.com/Beepered" target="_blank" style="float: left;">Github<img
+                        src="@assets/icons/github.png" class="icon" style="float: right;"></a>
+            </div>
+
+            <div class="social_link">
+                <a href="mailto:bktrieu@gmail.com" target="_blank" style="float: left;">Email<img
+                        src="@assets/icons/email.png" class="icon" style="float: right;"></a>
+            </div>
         </div>
 
         <div style="background-color: #f4f4f4; margin: 0;">
@@ -68,35 +91,12 @@
             </div>
         </div>
 
-        <div class="padd" style="margin: auto; width: 70%;">
+        <div class="margins" style="margin: auto; width: 70%;">
             <p>View my <a href="https://sites.google.com/view/brendan-trieu-portfolio/home" target="_blank">old
                     portfolio
                     website</a></p>
 
             <QuoteGenerator style="font-size: 1.1em;"></QuoteGenerator>
-        </div>
-
-        <div class="footer">
-            <div class="social_link">
-                <a href="https://www.linkedin.com/in/brendan-trieu-882753266/" target="_blank"
-                    style="float: left;">Linkedin<img src="@assets/icons/linkedin.png" class="icon"
-                        style="float: right;"></a>
-            </div>
-
-            <div class="social_link">
-                <a href="https://luminice-star.itch.io/" target="_blank" style="float: left;">itch.io<img
-                        src="@assets/icons/itch.png" class="icon" style="float: right;"></a>
-            </div>
-
-            <div class="social_link">
-                <a href="https://github.com/Beepered" target="_blank" style="float: left;">Github<img
-                        src="@assets/icons/github.png" class="icon" style="float: right;"></a>
-            </div>
-
-            <div class="social_link">
-                <a href="mailto:bktrieu@gmail.com" target="_blank" style="float: left;">Email<img
-                        src="@assets/icons/email.png" class="icon" style="float: right;"></a>
-            </div>
         </div>
 
         <div id="odd_pixel" @click="this.$router.push('/Funny')" :style="`margin-left: ${margin}%;`"></div>
@@ -175,7 +175,7 @@ export default {
 </script>
 
 <style scoped>
-.footer {
+.link-holder {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -183,15 +183,14 @@ export default {
     padding: 12px;
     width: 55vw;
     margin-top: 1em;
-    bottom: 0;
-    left: 0;
+    margin-bottom: 2em;
     border-radius: 6px;
     background-color: #f4f4f4;
 }
 
-.padd {
-    padding-top: 2em;
-    padding-bottom: 2em;
+.margins {
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .block {
