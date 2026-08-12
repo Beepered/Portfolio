@@ -72,7 +72,7 @@ export class Chef extends Phaser.Physics.Arcade.Sprite {
   OnClick() {
     this.state = this.States.JUMP;
     this.play("jump", true);
-    this.time = 0.8;
+    this.time = 0.7;
     this.sounds[Phaser.Math.Between(0, this.sounds.length - 1)].play();
   }
 

@@ -45,8 +45,7 @@
                         I am passionate about programming and creating thing with my skills, whether it is video games
                         or
                         drawings.
-                        Though I have a degree in game design, programming interests me as a whole,
-                        and I would like to learn more and experience software development as a whole.
+                        Though I have a degree in game design, I truly love programming and the software development as a whole.
                     </p>
                 </div>
             </div>
